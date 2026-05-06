@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-05-06",
+  "target": {
+    "n_traces": 30,
+    "n_eval": 30,
+    "samples_per_condition": 4,
+    "conditions": ["no_rag", "rag"]
+  },
+  "iterations": [
+    {
+      "n": 1,
+      "date": "2026-05-06",
+      "summary": "Infrastructure + 1 fresh trace. Resumable state machine in place.",
+      "deliverables": [
+        "PIPELINE.md, state.json (this file)",
+        "prompts/struct.md (verbatim Fig 4 + anti-leakage instruction)",
+        "prompts/rag_inference.md (Fig 7 + anti-copying guardrail)",
+        "scripts/decontaminate.py (13-gram Jaccard against full trace text)",
+        "scripts/retrieve.py (TF-IDF + MMR, no API needed)",
+        "1 fresh trace: ex_2_20 (Morse normal form, multidim distinct from existing traces)"
+      ],
+      "constraint_discovered": "Etingof has only 35 Exercises total. Examples are demonstrations not problems. So 30 trace + 30 eval split is not achievable from this PDF alone. Iteration 2 must decide: shrink to ~12+12, add a second source, or run with smaller eval set."
+    }
+  ],
+  "stages": {
+    "extract": {"status": "complete_for_etingof", "n_candidates": 35, "note": "Examples are demonstrations not judgeable problems; expansion stopped"},
+    "curate":  {"status": "pending"},
+    "split":   {"status": "pending", "blocker": "decide allocation strategy given 35-problem ceiling"},
+    "traces":  {"status": "in_progress", "done": 4, "target": 30, "ids": ["ex_2_14", "ex_3_25", "ex_3_26", "ex_2_20"]},
+    "struct":  {"status": "in_progress", "done": 3, "target": 30, "ids": ["ex_2_14", "ex_3_25", "ex_3_26"], "pending": ["ex_2_20"]},
+    "index":   {"status": "pending"},
+    "eval":    {"status": "iter0_done", "done": 6, "target": "TBD pending allocation decision"},
+    "judge":   {"status": "iter0_done", "done": 6, "target": "TBD pending allocation decision"}
+  },
+  "next_iteration": {
+    "n": 2,
+    "planned": [
+      "DECISION: allocation strategy. Recommendation pending Oskar review: 18 trace + 12 eval (use the 17 most-judgeable Exercises as eval, rest as traces) — preserves stratification, slightly under-powered statistically but honest given source constraint.",
+      "Tag the 35 Exercises by judgeability (cheap Haiku call) and chapter/technique",
+      "Allocate trace vs eval; run decontamination check",
+      "Struct-transform ex_2_20 (catch up); generate 4-5 more fresh traces",
+      "End iter 2 with traces=8-9 and full eval-set decided"
+    ]
+  }
+}
