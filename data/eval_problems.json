@@ -1,0 +1,23 @@
+{
+  "ex_2_15": {
+    "id": "ex_2_15",
+    "chapter": 2,
+    "matched_to_trace": "ex_2_14",
+    "statement": "The Bessel function I_0(a) is defined by I_0(a) = (1/(2*pi)) * integral from 0 to 2*pi of e^{a cos theta} d theta. It is an even entire function with Taylor expansion I_0(a) = sum_{n>=0} a^{2n} / (2^{2n} (n!)^2). Use the steepest descent / stationary phase formulas to find the asymptotic expansion of I_0(a) as a -> +infinity and as a -> i*infinity. Compute the first two terms of the expansion in each regime.",
+    "rubric": "Correct leading asymptotic for a -> +infinity is e^a / sqrt(2*pi*a). Second-order correction is +1/(8a) factor (i.e., I_0(a) ~ e^a/sqrt(2*pi*a) * (1 + 1/(8a) + ...)). For a -> i*infinity (write a = i*b with b -> +infinity real), two stationary points contribute and combine into oscillatory cosine: I_0(ib) ~ sqrt(2/(pi*b)) * cos(b - pi/4) plus lower-order corrections."
+  },
+  "ex_3_24": {
+    "id": "ex_3_24",
+    "chapter": 3,
+    "matched_to_trace": "ex_3_26",
+    "statement": "For S(x) = x^2/2 - g*(x^2 + x^3/6), compute the 1-loop contribution to log(Z/Z_0). Then use this to compute the number of labeled n-vertex 1-loop graphs with 1-valent and 3-valent vertices only (be careful with double edges and self-loops). Check your answer by directly enumerating such graphs with small number of vertices.",
+    "rubric": "1-loop log Z/Z_0 = -1/2 * log(S''(x_c)/S''(0)) evaluated at the perturbed minimum, OR equivalently it equals (1/2) log det of inverse propagator including the x^2 quadratic coupling. The 1-loop contribution is -1/2 * log(1 - 2g - g*x_c) at the saddle x_c (where S'(x_c)=0), or in the Feynman expansion around x=0, it equals the sum of 1-loop 1PI vacuum diagrams with the modified propagator. Simplest correct answer: the 1-loop contribution to log Z (no source) equals -1/2 log(1 - 2g) + O(g^2) at x=0 from the x^2 coupling alone, plus 3-valent contributions starting at order g^2. Need to identify the correct diagrams: 1-loop diagrams with k>=2 trivalent vertices forming a cycle (necklace), or trivalent vertices contracted with the modified propagator. Acceptable: identify -1/2 log det of the modified kinetic term, identify the necklace-type 1PI diagrams from the trivalent vertex, careful treatment of the 1-loop tadpole (self-loop) contribution. Numerical enumeration of small n graphs as a check."
+  },
+  "ex_1_2_i": {
+    "id": "ex_1_2_i",
+    "chapter": 1,
+    "matched_to_trace": null,
+    "statement": "Consider the motion of a particle in a Euclidean space V. Show that if the potential U is concave (U''(q) <= 0 as a quadratic form on V) then for any a, b in V and a < b in R there exists at most one solution of the Newton equation m*q''(t) = -grad U(q) with q(a) = a_pt and q(b) = b_pt (for given endpoints a_pt, b_pt in V), and that this solution, if it exists, is the strict global minimum of the action S[q] = integral from a to b of (m*|q'|^2/2 - U(q)) dt with these boundary conditions.",
+    "rubric": "Standard argument: write any other admissible path as q + epsilon where epsilon vanishes at endpoints. Compute action difference S[q+eps] - S[q] = integral of (m*|eps'|^2/2 - U(q+eps) + U(q) + grad_U(q)*eps) dt - last term integrates by parts to vanish using EOM. The remainder is integral of (m*|eps'|^2/2 - (U(q+eps) - U(q) - DU(q)*eps)) dt. By concavity of U (U''<=0), the remainder term -(U(q+eps) - U(q) - DU(q)*eps) >= 0 (concavity inequality reversed), and equality only when eps = 0. So action strictly increases off the solution; uniqueness follows. Off-domain test: the trace corpus is on asymptotic integrals, generating functions, and Feynman effective action — none cover variational mechanics. Expectation: RAG should not help here (and ideally not hurt — poisoning check)."
+  }
+}
