@@ -1,0 +1,38 @@
+{
+  "decision_date": "2026-05-06",
+  "decision_iteration": 2,
+  "rationale": "Etingof yields 24 self-contained, judgeable, non-answer-leaking problems after manual curation. Haiku-tagged judgement was unreliable (hallucinated technique tags from chapter context, marked 'Check this' problems as self-contained). Manual curation at this scale is faster than another tagger round.",
+  "split": {
+    "n_trace": 12,
+    "n_eval": 6,
+    "n_total": 18
+  },
+  "stratification": "Each trace contributes a distinct technique. Each eval problem has at least one trace with a related technique (positive-control match). Diversity goal: cover asymptotic integrals, Feynman calculus, matrix integrals, group theory, perturbative QFT, CFT, ODE theory, geometry — 12 distinct technique buckets.",
+  "trace_set": {
+    "ex_2_14": {"technique": "steepest_descent_1d", "status": "done", "iteration": 0},
+    "ex_3_25": {"technique": "tree_egf_dissymmetry", "status": "done", "iteration": 0},
+    "ex_3_26": {"technique": "1loop_effective_action", "status": "done", "iteration": 0},
+    "ex_2_20": {"technique": "morse_lemma_explicit", "status": "done", "iteration": 1},
+    "ex_4_9":  {"technique": "matrix_integral_lie_rep", "status": "pending", "priority": "medium"},
+    "ex_4_15": {"technique": "random_matrix_orthogonal_poly", "status": "pending", "priority": "medium"},
+    "ex_5_18": {"technique": "group_euler_char", "status": "pending", "priority": "high_short"},
+    "ex_7_27": {"technique": "1pi_2point_quartic", "status": "pending", "priority": "medium"},
+    "ex_9_13": {"technique": "amitsur_levitzki", "status": "pending", "priority": "high_short"},
+    "ex_13_4": {"technique": "cft_theta_torus", "status": "pending", "priority": "low_complex"},
+    "ex_2_12": {"technique": "borel_sum_hypergeom", "status": "pending", "priority": "medium"},
+    "ex_5_19": {"technique": "hyperbolic_triangle_coxeter", "status": "pending", "priority": "medium"}
+  },
+  "eval_set": {
+    "ex_1_2":   {"matched_trace": null, "purpose": "off-domain (variational), poisoning check", "status": "iter0_done"},
+    "ex_2_15":  {"matched_trace": "ex_2_14", "purpose": "intra-technique (steepest descent)", "status": "iter0_done"},
+    "ex_3_24":  {"matched_trace": "ex_3_26", "purpose": "intra-technique (effective action / 1-loop)", "status": "iter0_done"},
+    "ex_5_17":  {"matched_trace": "ex_5_18", "purpose": "intra-technique (group/Euler char)", "status": "pending"},
+    "ex_7_28":  {"matched_trace": "ex_7_27", "purpose": "intra-technique (perturbative QFT / 1PI)", "status": "pending"},
+    "ex_13_12": {"matched_trace": "ex_13_4",  "purpose": "intra-technique (CFT / Virasoro)", "status": "pending"}
+  },
+  "excluded": {
+    "answer_leak": ["ex_4_14"],
+    "context_dependent": ["ex_3_10", "ex_3_16", "ex_5_16", "ex_6_1", "ex_10_7", "ex_13_3", "ex_2_5"],
+    "long_or_complex_in_partial_run": ["ex_3_27", "ex_7_29", "ex_8_15", "ex_8_33", "ex_9_12", "ex_10_8", "ex_11_16", "ex_13_7", "ex_13_8"]
+  }
+}
