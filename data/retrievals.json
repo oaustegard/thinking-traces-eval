@@ -1,0 +1,86 @@
+{
+  "ex_2_15": [
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.2536
+    },
+    {
+      "id": "ex_9_13_amitsur_levitzki",
+      "relevance": 0.1622
+    },
+    {
+      "id": "ex_2_20_morse",
+      "relevance": 0.0606
+    }
+  ],
+  "ex_3_24": [
+    {
+      "id": "ex_3_26_effective_action",
+      "relevance": 0.182
+    },
+    {
+      "id": "ex_5_18_euler_char",
+      "relevance": 0.0617
+    },
+    {
+      "id": "ex_9_13_amitsur_levitzki",
+      "relevance": 0.0233
+    }
+  ],
+  "ex_1_2_i": [
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.0667
+    },
+    {
+      "id": "ex_5_18_euler_char",
+      "relevance": 0.0383
+    },
+    {
+      "id": "ex_2_20_morse",
+      "relevance": 0.0491
+    }
+  ],
+  "ex_5_17": [
+    {
+      "id": "ex_5_18_euler_char",
+      "relevance": 0.5094
+    },
+    {
+      "id": "ex_3_25_trees",
+      "relevance": 0.0153
+    },
+    {
+      "id": "ex_9_13_amitsur_levitzki",
+      "relevance": 0.0097
+    }
+  ],
+  "ex_7_28": [
+    {
+      "id": "ex_2_20_morse",
+      "relevance": 0.0815
+    },
+    {
+      "id": "ex_9_13_amitsur_levitzki",
+      "relevance": 0.0093
+    },
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.0323
+    }
+  ],
+  "ex_5_19": [
+    {
+      "id": "ex_5_18_euler_char",
+      "relevance": 0.4321
+    },
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.196
+    },
+    {
+      "id": "ex_9_13_amitsur_levitzki",
+      "relevance": 0.0032
+    }
+  ]
+}

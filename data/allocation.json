@@ -18,17 +18,18 @@
     "ex_5_18": {"technique": "group_euler_char", "status": "pending", "priority": "high_short"},
     "ex_7_27": {"technique": "1pi_2point_quartic", "status": "pending", "priority": "medium"},
     "ex_9_13": {"technique": "amitsur_levitzki", "status": "pending", "priority": "high_short"},
-    "ex_13_4": {"technique": "cft_theta_torus", "status": "pending", "priority": "low_complex"},
-    "ex_2_12": {"technique": "borel_sum_hypergeom", "status": "pending", "priority": "medium"},
-    "ex_5_19": {"technique": "hyperbolic_triangle_coxeter", "status": "pending", "priority": "medium"}
+    "ex_2_12": {"technique": "borel_sum_hypergeom", "status": "pending", "priority": "medium"}
+  },
+  "trace_set_revisions": {
+    "iter3": "Dropped ex_13_4 (CFT theta) and ex_5_19 (hyperbolic triangle); swapped ex_5_19 to eval set after discovering that ex_13_12 references undefined Ln operators and is unusable as eval. New trace target: 11 (6 done + 5 pending). The CFT pair (ex_13_4 trace + ex_13_12 eval) is dropped since the eval is unusable; ex_5_18 trace is now matched by TWO eval problems (ex_5_17, ex_5_19), giving a doubled signal on group/Euler-char technique transfer."
   },
   "eval_set": {
-    "ex_1_2":   {"matched_trace": null, "purpose": "off-domain (variational), poisoning check", "status": "iter0_done"},
-    "ex_2_15":  {"matched_trace": "ex_2_14", "purpose": "intra-technique (steepest descent)", "status": "iter0_done"},
-    "ex_3_24":  {"matched_trace": "ex_3_26", "purpose": "intra-technique (effective action / 1-loop)", "status": "iter0_done"},
-    "ex_5_17":  {"matched_trace": "ex_5_18", "purpose": "intra-technique (group/Euler char)", "status": "pending"},
-    "ex_7_28":  {"matched_trace": "ex_7_27", "purpose": "intra-technique (perturbative QFT / 1PI)", "status": "pending"},
-    "ex_13_12": {"matched_trace": "ex_13_4",  "purpose": "intra-technique (CFT / Virasoro)", "status": "pending"}
+    "ex_1_2":   {"matched_trace": null,       "purpose": "off-domain (variational), poisoning check", "status": "iter0_done"},
+    "ex_2_15":  {"matched_trace": "ex_2_14",  "purpose": "intra-technique (steepest descent)",        "status": "iter0_done"},
+    "ex_3_24":  {"matched_trace": "ex_3_26",  "purpose": "intra-technique (1-loop / Feynman)",        "status": "iter0_done"},
+    "ex_5_17":  {"matched_trace": "ex_5_18",  "purpose": "intra-technique (group/Euler char)",        "status": "pending"},
+    "ex_7_28":  {"matched_trace": "ex_7_27",  "purpose": "intra-technique (perturbative QFT)",        "status": "pending"},
+    "ex_5_19":  {"matched_trace": "ex_5_18",  "purpose": "intra-technique (group/Euler char), 2nd",   "status": "pending"}
   },
   "excluded": {
     "answer_leak": ["ex_4_14"],
