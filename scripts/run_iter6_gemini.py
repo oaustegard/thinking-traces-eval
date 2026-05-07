@@ -103,18 +103,20 @@ def one_inference(args):
     model, subdir, prob_id, condition, sample_idx = args
     out_dir = REPO / f"answers_iter6/{subdir}/{condition}/sample_{sample_idx}"
     out_path = out_dir / f"{prob_id}.md"
-    if out_path.exists() and out_path.stat().st_size > 200:
+    if out_path.exists() and out_path.stat().st_size > 200 and "boxed" in out_path.read_text():
         return f"SKIP {condition}/{sample_idx}/{prob_id}"
     out_dir.mkdir(parents=True, exist_ok=True)
     prompt = BUILDERS[condition](prob_id)
     t0 = time.time()
     try:
         # temperature ~0.7 to match diversity of Haiku subagent draws
+        # max_output_tokens=16000 — flash-lite uses many tokens for working,
+        # 4000 truncated 77% of outputs mid-derivation in the first sweep.
         resp = invoke_gemini(
             prompt=prompt,
             model=model,
             temperature=0.7,
-            max_output_tokens=4000,
+            max_output_tokens=16000,
         )
         if not resp:
             return f"FAIL {condition}/{sample_idx}/{prob_id} (null response)"
