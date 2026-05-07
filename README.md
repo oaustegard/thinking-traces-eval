@@ -15,8 +15,12 @@ helps, hurts, or is neutral depending on (a) the inference model's capability,
 (b) the prompt framing around the retrievals, and (c) whether the closest
 retrieval contains a sign / parameter convention that conflicts with the
 target. Full headline reframing in
-[`results/HEADLINE_REFRAMED.md`](results/HEADLINE_REFRAMED.md) and the
-post-iter-7 refinement in [`results/ITER7_FINDINGS.md`](results/ITER7_FINDINGS.md).
+[`results/HEADLINE_REFRAMED.md`](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/HEADLINE_REFRAMED.md),
+the post-iter-7 refinement in [`results/ITER7_FINDINGS.md`](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER7_FINDINGS.md),
+and the post-iter-8 corroboration on T³'s actual AIME setup in
+[`results/ITER8_FINDINGS.md`](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER8_FINDINGS.md).
+
+**Blog write-up:** [muninn.austegard.com/blog/rag-over-thinking-traces-its-complicated.html](https://muninn.austegard.com/blog/rag-over-thinking-traces-its-complicated.html).
 
 ## Domain
 
@@ -29,9 +33,9 @@ plausibly carry technique knowledge.
 
 ## What was actually run
 
-Seven iterations across 384 inferences total, all judged by Sonnet 4.6 with
-the same per-problem rubrics. Bootstrap CIs (10000 resamples) on every
-headline claim — see [`results/bootstrap_cis.txt`](results/bootstrap_cis.txt)
+Eight iterations across 404 inferences total, judged by Sonnet 4.6 (iters
+1–7) or by exact-match on integer answers (iter-8). Bootstrap CIs (10000
+resamples) on every headline claim — see [`results/bootstrap_cis.txt`](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/bootstrap_cis.txt)
 and [`scripts/bootstrap_cis.py`](scripts/bootstrap_cis.py).
 
 | Iter | Scope | Inferences | Finding | Writeup |
@@ -42,9 +46,10 @@ and [`scripts/bootstrap_cis.py`](scripts/bootstrap_cis.py).
 | 4 | In-distribution headroom (`ex_3_24`, `ex_7_28`), 8 samples × 3 cond | 48 | RAG **harms** Haiku 4.5: Δ Struct = −0.21 [−0.31, −0.11] | [ITER4_FINDINGS.md](results/ITER4_FINDINGS.md) |
 | 5 | OOD problems (`ood_steepest`, `ood_1loop`) | 48 | Splits by convention-conflict: harm only when retrieval's sign/parameter convention conflicts with target | [ITER5_FINDINGS.md](results/ITER5_FINDINGS.md) |
 | 6 | Capability ladder: Gemini 2.5 Flash + Flash Lite, same 4 problems × 3 cond | 192 | **Direction reverses on Flash**: Δ Struct = +0.41 [+0.28, +0.53] on `ex_3_24`. Lite is in noise floor. | [ITER6_FINDINGS.md](results/ITER6_FINDINGS.md) |
-| 7 | Vanilla n-shot ablation: same retrievals, no anti-copy framing | 64 | Framing does ~half the work. Removing it lifts Haiku +19pp and drops Flash −20pp on `ex_3_24` | [ITER7_FINDINGS.md](results/ITER7_FINDINGS.md) |
+| 7 | Vanilla n-shot ablation: same retrievals, no anti-copy framing | 64 | Framing does ~half the work. Removing it lifts Haiku +19pp and drops Flash −20pp on `ex_3_24` | [ITER7_FINDINGS.md](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER7_FINDINGS.md) |
+| 8 | Replicate T³'s shipped AIME 25 setup vs Haiku 4.5 (post-publication, after reading T³'s code) | 20 | T³'s shipped prompt is mild ("use as hints"), much closer to my "vanilla" than to my "recipe-RAG" — framing claim is overstated against T³ specifically. AIME 25 (n=10): Haiku no_rag = struct = 6/10. Δ = 0.0pp. | [ITER8_FINDINGS.md](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER8_FINDINGS.md) |
 
-## Headline (post-iter-7)
+## Headline (post-iter-8)
 
 The story has four interacting legs, none of which is "T³ is wrong":
 
@@ -58,12 +63,17 @@ The story has four interacting legs, none of which is "T³ is wrong":
    `−(1/2) log`), strong-tier models copy the convention and produce wrong
    answers; weaker-tier models with technique gaps benefit from the same hint.
    Same mechanism, opposite outcomes.
-3. **The framing does about half the work.** The T³ paper's "anti-copy"
-   prompt structure ("use as hints, state relevance and differences") is the
-   *source* of about half of the Flash lift on `ex_3_24` (struct − vanilla
-   ≈ +0.20pp on the same retrievals). On Haiku the same framing makes the
-   harm worse; vanilla ICL recovers ~19pp on `ex_3_24`. So "RAG over thinking
-   traces" results are not just about the retrieved content — they're about
+3. **The framing does about half the work — within my pipeline.** My
+   "anti-copy" recipe-RAG framing ("use as hints, state relevance and
+   differences") is the *source* of about half of the Flash lift on
+   `ex_3_24` (recipe − vanilla ≈ +0.20pp on the same retrievals). On Haiku
+   the same framing makes the harm worse; vanilla ICL recovers ~19pp on
+   `ex_3_24`. **Caveat (iter-8):** T³'s actual shipped inference prompt is
+   mild ("use as hints, useful strategies"), much closer to my "vanilla"
+   than to my "recipe." The framing claim holds as an internal comparison
+   inside this repo's pipeline; it does not impeach T³ as published. So
+   "RAG over thinking traces" results are not just about the retrieved
+   content — they're about
    prompt structure × content × tier.
 4. **Below a capability floor, retrievals are neither help nor harm.** Gemini
    2.5 Flash Lite is at the noise floor across all conditions; it lacks the

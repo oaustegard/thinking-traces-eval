@@ -74,6 +74,29 @@
 
 <p>Caveats (single judge, n=8 cells, headroom selection on iter-4, 7-trace scale only) are documented <a href="https://github.com/oaustegard/thinking-traces-eval#caveats-and-known-limits">in the repo</a>. They bound the claims; they don't overturn them.</p>
 
+<hr>
+
+<h2>Postscript (May 7, 2026): I read T³'s source code</h2>
+
+<p>After publishing, I actually pulled <a href="https://github.com/Narabzad/t3">T³'s repository</a> and read the eval code. Two updates.</p>
+
+<p><strong>The &ldquo;framing does about half the work&rdquo; claim, against T³ specifically, is overstated.</strong> T³'s shipped inference prompt (in <a href="https://github.com/Narabzad/t3/blob/main/eval/tasks/aime/utils.py"><code>eval/tasks/aime/utils.py</code></a>) is mild &mdash; <em>&ldquo;Considering the following examples as hints, try to answer the question. Use any useful hints and strategies from the retrieved examples.&rdquo;</em> That's it. No &ldquo;state relevance and differences first,&rdquo; no anti-copy guardrail, no recipe-style scaffold. What I called &ldquo;vanilla nshot&rdquo; in iter-7 is closer to T³'s actual code-shipped prompt than what I called &ldquo;struct/raw&rdquo; was. The framing-vs-content split in iter-7 still holds as an internal comparison within my own pipeline; it does not impeach T³ as published.</p>
+
+<p><strong>I ran T³'s actual AIME 2025 setup against Haiku 4.5.</strong> Used T³'s exact prompt template, T³'s shipped <code>t3_struct_e5base_full.jsonl</code> retrievals, exact-match scoring on integer answers &mdash; all per their code. Smoke scope: AIME 2025 problems 0&ndash;9, 1 sample per cell, 20 inferences total.</p>
+
+<table>
+<tr><th></th><th>Haiku 4.5</th></tr>
+<tr><td>no_rag</td><td>6/10</td></tr>
+<tr><td>struct (T³ retrievals + T³ prompt)</td><td>6/10</td></tr>
+<tr><td><strong>&Delta;</strong></td><td><strong>0.0pp</strong></td></tr>
+</table>
+
+<p>Zero discordant pairs &mdash; the same 6 problems were solved correctly under both conditions, and the same 4 were missed. The retrieved examples did <em>move</em> Haiku's answer on 3 of 4 wrong problems (struct produced different wrong integers), they just never moved it toward correctness. T³ reports +5.8pp lift on GPT-5 (the closest tier neighbor) on the full AIME 25/26 set. My smoke gets 0.0pp.</p>
+
+<p>This is a 10-problem smoke and can't reject a small lift; the McNemar test wants discordant pairs and there are none. But it corroborates the iter-4..7 finding that strong-tier models on in-pretraining domains barely benefit from trace-RAG, on T³'s actual benchmark and prompts rather than my niche Etingof corpus. Full iter-8 writeup (with the methodology detour where batched-30-problems subagents shortcut to plausible integers, plus the fix) at <a href="https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER8_FINDINGS.md"><code>results/ITER8_FINDINGS.md</code></a>.</p>
+
+<p>The four-leg story stands; one leg gets a footnote saying &ldquo;the framing claim is internal-comparison only, T³'s real prompt is closer to vanilla.&rdquo;</p>
+
     </article>
 </body>
 </html>
