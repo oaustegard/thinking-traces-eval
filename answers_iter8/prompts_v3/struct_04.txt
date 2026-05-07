@@ -1,0 +1,68 @@
+Considering the following examples as hints, try to answer the question.
+
+Use any useful hints and strategies from the retrieved examples.
+
+Example 1: **Approach:** Digit Sum and Casework
+
+**Problem:** Find the number of eight-digit positive integers with distinct digits that are divisible by 9.
+
+**Step 1 — Identify Key Property:** Recognize a number is divisible by 9 if and only if the sum of its digits is divisible by 9.
+
+**Step 2 — Determine Missing Digits:** Realize the sum of all digits 0-9 is 45. To get a sum divisible by 9 with 8 distinct digits, the sum of the missing two digits must also be divisible by 9.
+
+**Step 3 — List Possible Pairs:** Enumerate pairs of distinct digits that sum to 9: (0, 9), (1, 8), (2, 7), (3, 6), (4, 5).
+
+**Step 4 — Calculate Permutations Without Zero:** For sets without 0 (e.g., missing 0 and 9), arrange the 8 digits in $8!$ ways.
+
+**Step 5 — Calculate Permutations With Zero:** For sets with 0 (e.g., missing 1 and 8), the first digit cannot be zero. Calculate $7 \times 7!$ permutations for each such set.
+
+**Step 6 — Compute Total Permutations:** Calculate the total number of permutations: $8! + 4 \times (7 \times 7!)$.
+
+**Step 7 — Calculate Final Result:** Compute $8! + 4 \times (7 \times 7!) = 40320 + 4 \times 35280 = 40320 + 141120 = 181440$.
+
+**Answer:** $\boxed{181440}$
+Example 2: **Approach:** Arithmetic Progression
+
+**Problem:** Find the number of positive four-digit integers that are divisible by 8.
+
+**Step 1 — Identify the First and Last Terms:**
+Find the smallest four-digit integer divisible by 8: 1000.  Find the largest four-digit integer divisible by 8: 9992.
+
+**Step 2 — Define the Arithmetic Progression:**
+Recognize that the divisible numbers form an arithmetic progression with first term $a = 1000$, common difference $d = 8$, and last term $l = 9992$.
+
+**Step 3 — Apply the Arithmetic Progression Formula:**
+Use the formula for the nth term: $l = a + (n-1)d$.
+
+**Step 4 — Substitute the Values:**
+Substitute $1000$, $9992$, and $8$ into the formula: $9992 = 1000 + (n-1)8$.
+
+**Step 5 — Solve for n:**
+Simplify and solve for $n$: $8992 = (n-1)8 \Rightarrow 1124 = n-1 \Rightarrow n = 1125$.
+
+**Step 6 — State the Answer:**
+The number of such integers, n, is 1125.
+
+**Answer:** $\boxed{1125}$
+Example 3: **Approach:** Construct and Test
+
+**Problem:** Find the smallest positive multiple of 15 whose digits are only 8 or 0. Then, compute the result of dividing that number by 15.
+
+**Step 1 — Recognize Divisibility Rules:** The number must be divisible by both 3 and 5. This means the last digit must be 0, and the sum of the digits must be divisible by 3.
+
+**Step 2 — Determine Digits Sum Condition:** Since the digits are only 8 or 0, and the sum of digits must be divisible by 3, the number of 8's must be a multiple of 3.
+
+**Step 3 — Test with Three 8's:** Start with the smallest possible multiple of 3 for the number of 8's, which is 3. Construct a number with three 8's and ending in 0. The smallest such number is 8880.
+
+**Step 4 — Verify Divisibility:** Check if 8880 is divisible by 15.  $8880/5 = 1776$. The digit sum is $8 + 8 + 8 + 0 = 24$, which is divisible by 3.
+
+**Step 5 — Confirm the Multiple:** Since 8880 is divisible by both 3 and 5, it is divisible by 15.
+
+**Step 6 — Calculate the Quotient:** Divide 8880 by 15:  $8880 / 15 = 592$.
+
+**Answer:** $\boxed{592}$
+
+
+main problem:
+There are $8!= 40320$ eight-digit positive integers that use each of the digits 1, 2, 3, 4, 5, 6, 7, 8 exactly once. Let N be the number of these integers that are divisible by $22$. Find the difference between $N$ and 2025.
+Present the answer in LaTeX format: \boxed{Your answer}

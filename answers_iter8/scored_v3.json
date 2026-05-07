@@ -1,0 +1,142 @@
+[
+  {
+    "idx": 0,
+    "cond": "no_rag",
+    "ans": "70",
+    "truth": "70",
+    "correct": 1
+  },
+  {
+    "idx": 1,
+    "cond": "no_rag",
+    "ans": "504",
+    "truth": "588",
+    "correct": 0
+  },
+  {
+    "idx": 2,
+    "cond": "no_rag",
+    "ans": "16",
+    "truth": "16",
+    "correct": 1
+  },
+  {
+    "idx": 3,
+    "cond": "no_rag",
+    "ans": "117",
+    "truth": "117",
+    "correct": 1
+  },
+  {
+    "idx": 4,
+    "cond": "no_rag",
+    "ans": "279",
+    "truth": "279",
+    "correct": 1
+  },
+  {
+    "idx": 5,
+    "cond": "no_rag",
+    "ans": "504",
+    "truth": "504",
+    "correct": 1
+  },
+  {
+    "idx": 6,
+    "cond": "no_rag",
+    "ans": "16",
+    "truth": "821",
+    "correct": 0
+  },
+  {
+    "idx": 7,
+    "cond": "no_rag",
+    "ans": "77",
+    "truth": "77",
+    "correct": 1
+  },
+  {
+    "idx": 8,
+    "cond": "no_rag",
+    "ans": "47",
+    "truth": "62",
+    "correct": 0
+  },
+  {
+    "idx": 9,
+    "cond": "no_rag",
+    "ans": "59",
+    "truth": "81",
+    "correct": 0
+  },
+  {
+    "idx": 0,
+    "cond": "struct",
+    "ans": "70",
+    "truth": "70",
+    "correct": 1
+  },
+  {
+    "idx": 1,
+    "cond": "struct",
+    "ans": "882",
+    "truth": "588",
+    "correct": 0
+  },
+  {
+    "idx": 2,
+    "cond": "struct",
+    "ans": "16",
+    "truth": "16",
+    "correct": 1
+  },
+  {
+    "idx": 3,
+    "cond": "struct",
+    "ans": "117",
+    "truth": "117",
+    "correct": 1
+  },
+  {
+    "idx": 4,
+    "cond": "struct",
+    "ans": "279",
+    "truth": "279",
+    "correct": 1
+  },
+  {
+    "idx": 5,
+    "cond": "struct",
+    "ans": "504",
+    "truth": "504",
+    "correct": 1
+  },
+  {
+    "idx": 6,
+    "cond": "struct",
+    "ans": "7",
+    "truth": "821",
+    "correct": 0
+  },
+  {
+    "idx": 7,
+    "cond": "struct",
+    "ans": "77",
+    "truth": "77",
+    "correct": 1
+  },
+  {
+    "idx": 8,
+    "cond": "struct",
+    "ans": "20",
+    "truth": "62",
+    "correct": 0
+  },
+  {
+    "idx": 9,
+    "cond": "struct",
+    "ans": "47",
+    "truth": "81",
+    "correct": 0
+  }
+]

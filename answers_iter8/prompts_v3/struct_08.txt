@@ -1,0 +1,62 @@
+Considering the following examples as hints, try to answer the question.
+
+Use any useful hints and strategies from the retrieved examples.
+
+Example 1: **Approach:** Quadratic Formula
+
+**Problem:** Find the number of $y$-intercepts of the parabola $x = -y^2 + 4y - 4$.
+
+**Step 1 — Set x=0:** Substitute $x = 0$ into the equation: $0 = -y^2 + 4y - 4$.
+
+**Step 2 — Rewrite the equation:** Multiply by $-1$ to get: $y^2 - 4y + 4 = 0$.
+
+**Step 3 — Identify coefficients:** Identify the coefficients: $a = 1$, $b = -4$, $c = 4$.
+
+**Step 4 — Apply the quadratic formula:** Apply the quadratic formula: $y = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+**Step 5 — Substitute and simplify:** Substitute the values: $y = \frac{-(-4) \pm \sqrt{(-4)^2 - 4(1)(4)}}{2(1)} = \frac{4 \pm \sqrt{16 - 16}}{2} = \frac{4 \pm 0}{2} = 2$.
+
+**Step 6 — Find the y-intercept(s):** The graph intersects the $y$-axis at $(0,2)$.
+
+**Step 7 — Count the y-intercepts:** Since there is one distinct value for $y$, there is one $y$-intercept.
+
+**Answer:** $\boxed{1}$
+Example 2: **Approach:** Solving Quadratic Equations
+
+**Problem:** Find the number of $y$-intercepts of the parabola $x = -y^2 + 4y - 4$.
+
+**Step 1 — Set x=0:** Set $x = 0$ in the given equation to find the $y$-intercepts: $0 = -y^2 + 4y - 4$.
+
+**Step 2 — Rewrite the equation:** Multiply the equation by $-1$ to get a positive leading coefficient: $y^2 - 4y + 4 = 0$.
+
+**Step 3 — Factor the quadratic:** Factor the quadratic expression: $(y - 2)(y - 2) = 0$, or $(y-2)^2 = 0$.
+
+**Step 4 — Solve for y:** Solve for $y$: $y - 2 = 0$, thus $y = 2$.
+
+**Step 5 — Determine the y-intercept(s):** The graph intersects the $y$-axis when $x=0$, at the point $(0, 2)$.
+
+**Step 6 — Count the y-intercepts:**  Since there is only one distinct value for $y$, there is only one $y$-intercept.
+
+**Answer:** $\boxed{1}$
+Example 3: **Approach:** Vertex Formula
+
+**Problem:** Find the x-coordinate ($m$) of the vertex of the parabola defined by $y = 2x^2 - 4x + 4$.
+
+**Step 1 — Identify Coefficients:**
+Identify the coefficients $a$, $b$, and $c$ in the quadratic equation $y = ax^2 + bx + c$. Here, $a=2$, $b=-4$, and $c=4$.
+
+**Step 2 — Apply the Vertex Formula:**
+Use the formula $m = -\frac{b}{2a}$ to calculate the x-coordinate of the vertex.
+
+**Step 3 — Substitute Values:**
+Substitute the values of $a$ and $b$ into the formula: $m = -\frac{-4}{2(2)}$.
+
+**Step 4 — Simplify the Expression:**
+Simplify the expression to find the value of $m$: $m = \frac{4}{4} = 1$.
+
+**Answer:** $\boxed{1}$
+
+
+main problem:
+The parabola with equation $y = x^2 - 4$ is rotated $60^\circ$ counterclockwise around the origin. The unique point in the fourth quadrant where the original parabola and its image intersect has $y$-coordinate $\frac{a - \sqrt{b}}{c}$, where $a$, $b$, and $c$ are positive integers, and $a$ and $c$ are relatively prime. Find $a + b + c$.
+Present the answer in LaTeX format: \boxed{Your answer}

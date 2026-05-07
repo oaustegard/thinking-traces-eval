@@ -1,0 +1,78 @@
+Considering the following examples as hints, try to answer the question.
+
+Use any useful hints and strategies from the retrieved examples.
+
+Example 1: **Approach:** Identify a Unique Solution Set
+
+**Problem:** Given that $x_1, x_2, ..., x_{100}$ are positive integers and $\sum_{i=1}^{100} \frac{1}{\sqrt{x_i}} = 20$, find the value of the product $\prod_{i \ne j} \left( x_i - x_j \right)$.
+
+**Step 1 — Recognize the Constraint and the Product:** Note that the product is zero if any two $x_i$ are equal.
+
+**Step 2 — Deduce Integer Solutions:** Observe the constraint $\sum_{i=1}^{100} \frac{1}{\sqrt{x_i}} = 20$. If $x_i$ are all equal, we have $\frac{100}{\sqrt{x}} = 20$, so $\sqrt{x} = 5$, giving $x = 25$.
+
+**Step 3 — Argue for Uniqueness of Solution:** If all $x_i = 25$, then the sum is 20. If any of the $x_i$ were different from 25, the sum could not be 20 for integer values, since the average must be 25, and there's no other combination that could satisfy the sum of reciprocals.
+
+**Step 4 — Conclude Product Value:** Since the only solution has all $x_i = 25$, the product $\prod_{i \ne j} (x_i - x_j)$ becomes $\prod_{i \ne j} (25 - 25) = 0$.
+
+**Step 5 — Finalize the Answer:** Because the integers are equal, the product is zero.
+
+**Answer:** $\boxed{0}$
+Example 2: **Approach:** Algebraic Manipulation (Unsimplified Equation)
+
+**Problem:** Find the sum of all solutions to the equation $\frac{4x}{20}=\frac{5}{x}$.
+
+**Step 1 — Cross-Multiply:**
+Multiply both sides of the equation $\frac{4x}{20}=\frac{5}{x}$ by $20x$ to get $4x \cdot x = 20 \cdot 5$, resulting in $4x^2 = 100$.
+
+**Step 2 — Isolate x²:**
+Divide both sides by 4 to get $x^2 = \frac{100}{4}$.
+
+**Step 3 — Simplify:**
+Calculate $\frac{100}{4}$ to get $x^2 = 25$.
+
+**Step 4 — Take the Square Root:**
+Take the square root of both sides, resulting in $x = \pm \sqrt{25}$.
+
+**Step 5 — Determine the Solutions:**
+Simplify $\sqrt{25}$ to identify the solutions as $x=5$ and $x=-5$.
+
+**Step 6 — Sum the Solutions:**
+Add the solutions together: $5 + (-5) = 0$.
+
+**Step 7 — State the Answer:**
+The sum of all the solutions is 0.
+
+**Answer:** $\boxed{0}$
+Example 3: **Approach:** Algebraic Manipulation of Complex Numbers
+
+**Problem:** Find the sum of the real and imaginary parts of $z$, where $z$ is a complex number satisfying $|T| - 1 + 3i = \frac{1}{z}$, and $T = 5$.
+
+**Step 1 — Substitute and Simplify:**
+Substitute $T=5$ into the equation $|T| - 1 + 3i = \frac{1}{z}$ to get $5 - 1 + 3i = \frac{1}{z}$, which simplifies to $4 + 3i = \frac{1}{z}$.
+
+**Step 2 — Isolate z:**
+Take the reciprocal of both sides of the equation $4 + 3i = \frac{1}{z}$ to get $z = \frac{1}{4+3i}$.
+
+**Step 3 — Multiply by the Conjugate:**
+Multiply the numerator and denominator of $\frac{1}{4+3i}$ by the conjugate of the denominator, which is $4-3i$: $z = \frac{1}{4+3i} \cdot \frac{4-3i}{4-3i}$.
+
+**Step 4 — Simplify the Numerator:**
+Multiply the numerator: $1 \cdot (4-3i) = 4-3i$.
+
+**Step 5 — Simplify the Denominator:**
+Multiply the denominator: $(4+3i)(4-3i) = 4^2 - (3i)^2 = 16 - 9i^2 = 16 - 9(-1) = 16+9 = 25$.
+
+**Step 6 — Express z in Standard Form:**
+Write $z$ in the form $a+bi$: $z = \frac{4-3i}{25} = \frac{4}{25} - \frac{3}{25}i$.
+
+**Step 7 — Calculate the Sum:**
+Add the real and imaginary parts: $\frac{4}{25} + \left(-\frac{3}{25}\right) = \frac{1}{25}$.
+
+**Answer:** $\boxed{\frac{1}{25}}$
+
+
+main problem:
+Let $k$ be a real number such that the system
+\begin{align*} |25+20i-z|&=5\\ |z-4-k|&=|z-3i-k| \\ \end{align*}
+has exactly one complex solution $z$. The sum of all possible values of $k$ can be written as $\frac{m}{n},$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$ Here $i=\sqrt{-1}.$
+Present the answer in LaTeX format: \boxed{Your answer}

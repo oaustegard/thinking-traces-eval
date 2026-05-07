@@ -1,0 +1,68 @@
+Considering the following examples as hints, try to answer the question.
+
+Use any useful hints and strategies from the retrieved examples.
+
+Example 1: **Approach:** Angle Chasing and Cyclic Quadrilaterals
+
+**Problem:** Given circle $\omega$ passes through $B, K, L$. $\omega$ intersects $AB$ at $K$ and $BC$ at $L$. $\omega$ touches $AC$ at its midpoint $M$. $\angle LKN = \angle ACB$, and $\triangle CKN$ is equilateral. Find the angles of $\triangle ABC$.
+
+**Step 1 — Identify Cyclic Quadrilateral:** Recognize that $BKLC$ is a cyclic quadrilateral because points $B, K, L, C$ lie on the circle $\omega$.
+
+**Step 2 — Relate Angles Using Cyclic Property:** Use the property that opposite angles in a cyclic quadrilateral sum to $180^\circ$. So, $\angle BKL + \angle BCL = 180^\circ$ and $\angle KBC + \angle KLC = 180^\circ$.
+
+**Step 3 — Apply Tangent-Chord Theorem and Equilateral Triangle Properties:** Observe that $MK = ML$ and $\angle LKN = \angle C$, and $\angle CKN = 60^\circ$ because $CKN$ is equilateral.
+
+**Step 4 — Deduce Angle CKL:**  Since $\angle LKN = \angle C$ and $\angle CKN = 60^\circ$, then $\angle CKL = \angle CKN - \angle LKN = 60^\circ - \angle C$.
+
+**Step 5 — Find Angle BKC:**  Since $BKLC$ is cyclic, $\angle BKL = 180^\circ - \angle C$. Knowing that $\angle BKL = \angle BKC + \angle CKL$, then $\angle BKC = 180^\circ - C - (60^\circ - C) = 120^\circ$.
+
+**Step 6 — Relate Angles with Cyclic Property (Again):**  In the cyclic quadrilateral $BKLC$,  $\angle BLC + \angle BKC = 180^\circ$.  Therefore, $\angle BLC = 180^\circ - 120^\circ = 60^\circ$.
+
+**Step 7 — Sum Angles of Triangle BLC:**  In $\triangle BLC$, $\angle LBC + \angle BCL + \angle BLC = 180^\circ$. Substitute the known values to find $\angle B + \angle C + 60^\circ = 180^\circ$, which simplifies to $B + C = 120^\circ$. Since $\angle MLB = \angle A$, $A = C$, therefore $A = C = 60^\circ$ and $B = 60^\circ$.
+
+**Answer:** $\boxed{\triangle ABC \text{ is equilateral.}}$
+Example 2: **Approach:** Analyze Angles and Geometric Properties
+
+**Problem:** Given triangle ABC with AL the angle bisector of angle A. Point K lies on AL, with angle KBL = 30 degrees. Points M and N are on AB and AC respectively, such that angle BKL = angle KBL = 30 degrees. Find angle AMN, given no other information.
+
+**Step 1 — Deduce Angle BLK:** Compute the angle BLK in triangle BKL using the angle sum property of a triangle. Given $\angle KBL = \angle BKL = 30^\circ$, find $\angle BLK = 180^\circ - 30^\circ - 30^\circ = 120^\circ$.
+
+**Step 2 — Recognize Isosceles Triangle:** Since $\angle KBL = \angle BKL = 30^\circ$, infer that triangle BKL is an isosceles triangle with BL = KL.
+
+**Step 3 — Analyze Triangle ABK:** Express the angle AKB as $180^\circ - \frac{A}{2} - B$ using the angle sum property.
+
+**Step 4 — Analyze Triangle ACK:** Express the angle AKC as $180^\circ - \frac{A}{2} - C$ using the angle sum property.
+
+**Step 5 — Find Angle Sum Around K:** Observe that the angles around K sum to $360^\circ$: $\angle BKA + \angle AKC + \angle BKL = 360^\circ$, or  $\angle BKA + \angle AKC + \angle CKB = 360^\circ$.
+
+**Step 6 — Relate Angles to AMN:** Use the fact that $\angle AMN = 180^\circ - A - \angle ANM$, and recognizing $\angle ANM=\angle CKB$ using the angles at K.
+
+**Step 7 — Examine Special Cases/Look for Pattern:**  Without further information, it is impossible to determine the value of angle AMN.
+
+**Answer:** $\boxed{Cannot be determined from the given information}$
+Example 3: **Approach:** Coordinate Geometry and Area Decomposition
+
+**Problem:** Find the area of quadrilateral $ADBC$ given that $A$, $B$, and $C$ are vertices of a right triangle with $\angle A = 30^\circ$, $\angle B = 60^\circ$, $\angle C = 90^\circ$, and $BC = 1$.  $A$ is at the origin, $B$ is on the positive x-axis, and $D$ lies on the angle bisector of $\angle C$.
+
+**Step 1 — Determine Vertex Coordinates:** Assign coordinates: $A=(0,0)$. Since $\angle A = 30^\circ$, $\angle B = 60^\circ$, and $BC=1$, and B is on x-axis: $B = (\sqrt{3},0)$ and $C=(\sqrt{3},1)$.
+
+**Step 2 — Calculate Angle Bisector Equation:**  The angle bisector of $\angle C$ makes an angle of $60^\circ$ with the positive x-axis. Thus, its slope is $\sqrt{3}$, and it passes through $C(\sqrt{3}, 1)$.  Equation: $y - 1 = \sqrt{3}(x - \sqrt{3})$ or $y = \sqrt{3}x - 2$.
+
+**Step 3 — Find D's Coordinates:** Since $D$ is the intersection of the angle bisector with the y-axis, set $x=0$ in the bisector equation. This gives $y = -2$. Thus, $D = (0, -2)$.
+
+**Step 4 — Decompose the Quadrilateral into Triangles:** Divide the quadrilateral $ADBC$ into $\triangle ABC$ and $\triangle ABD$ using the common side $AB$.
+
+**Step 5 — Calculate Area of $\triangle ABC$:** Use base and height for right triangle: Area($\triangle ABC$) = $\frac{1}{2} \cdot AB \cdot BC = \frac{1}{2} \cdot \sqrt{3} \cdot 1 = \frac{\sqrt{3}}{2}$.
+
+**Step 6 — Calculate Area of $\triangle ABD$:** Use the base AB and height, the y-coordinate of D, which is $2$.  Area($\triangle ABD$) = $\frac{1}{2} \cdot AB \cdot |y_D| = \frac{1}{2} \cdot \sqrt{3} \cdot 2 = \sqrt{3}$.
+
+**Step 7 — Sum the Areas:** Area($ADBC$) = Area($\triangle ABC$) + Area($\triangle ABD$) = $\frac{\sqrt{3}}{2} + \sqrt{3} = \frac{3\sqrt{3}}{2}$.
+
+**Answer:** $\boxed{\frac{3\sqrt{3}}{2}}$
+
+
+main problem:
+Let $\triangle ABC$ be a right triangle with $\angle A = 90^\circ$ and $BC = 38$. There exist points $K$ and $L$ inside the triangle such that
+$$AK = AL = BK = CL = KL = 14.$$
+The area of the quadrilateral $BKLC$ can be expressed as $n\sqrt{3}$ for some positive integer $n$. Find $n$.
+Present the answer in LaTeX format: \boxed{Your answer}

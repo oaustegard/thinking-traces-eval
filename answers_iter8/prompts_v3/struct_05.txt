@@ -1,0 +1,70 @@
+Considering the following examples as hints, try to answer the question.
+
+Use any useful hints and strategies from the retrieved examples.
+
+Example 1: **Approach:** Approach using Radius of Inscribed Circle
+
+**Problem:** Find the area of an isosceles trapezoid circumscribed around a circle, given that the longer base is 16 and one base angle is arcsin(0.8).
+
+**Step 1 — Define Variables and Relationships:**
+Let $r$ be the radius of the inscribed circle, so $h = 2r$. Also, $AB=16$, and $\sin \theta = 0.8$.
+
+**Step 2 — Utilize Trigonometric Ratios and AE:**
+Since $\tan \theta = \frac{h}{AE} = \frac{2r}{AE}$ and $\tan \theta = \frac{4}{3}$, find $AE = \frac{3h}{4} = \frac{3(2r)}{4} = \frac{3r}{2}$.  Also, $AE = \frac{AB-CD}{2}$.
+
+**Step 3 — Express CD in terms of r:**
+Equate the expressions for $AE$: $\frac{3r}{2} = \frac{16-CD}{2}$.  Then $3r = 16-CD$, which simplifies to $CD = 16-3r$.
+
+**Step 4 — Use Tangential Trapezoid Property and Relate AD and r:**
+The property of tangential trapezoid yields $AB+CD = 2AD$, so $16+(16-3r)=2AD$.  Also, $\sin \theta = \frac{h}{AD}$, therefore $0.8 = \frac{2r}{AD}$, or $AD = \frac{2r}{0.8} = \frac{5r}{2}$.
+
+**Step 5 — Solve for r:**
+Substitute AD into the equation obtained in Step 4:  $32-3r = 2 \cdot \frac{5r}{2}=5r$.  This simplifies to $32 = 8r$, and thus $r=4$.
+
+**Step 6 — Determine Height, CD, and calculate the Area:**
+If $r=4$, then $h = 2r = 8$, and $CD = 16 - 3(4) = 4$. Then, compute Area: $\frac{1}{2}(16+4)(8) = 80$.
+
+**Answer:** $\boxed{80}$
+Example 2: **Approach:** Geometric Solution
+
+**Problem:** Find the area of an isosceles trapezoid with bases of length 7 and 17, and legs of length 13.
+
+**Step 1 — Draw the Diagram and Label:** Draw an isosceles trapezoid ABCD with AB = 7 and CD = 17 and AD = BC = 13. Drop perpendiculars from A and B to CD, meeting CD at E and F respectively.
+
+**Step 2 — Recognize the Rectangle and Congruent Triangles:** Observe that ABEF is a rectangle, so EF = AB = 7. Recognize that triangles ADE and BCF are congruent.
+
+**Step 3 — Compute the Projection Lengths:** Since DE + EF + FC = 17, and DE = FC, calculate DE and FC as (17 - 7)/2 = 5.
+
+**Step 4 — Apply the Pythagorean Theorem:** In right triangle ADE, apply the Pythagorean theorem: $AE^2 + DE^2 = AD^2$. Substitute the known values.
+
+**Step 5 — Calculate the Height:** Solve for the height AE (which is also the height of the trapezoid, h): $h^2 + 5^2 = 13^2$,  $h^2 = 144$, $h = 12$.
+
+**Step 6 — Apply the Area Formula:** Use the formula for the area of a trapezoid:  $A = (1/2)(b_1 + b_2)h$. Substitute the known values.
+
+**Step 7 — Calculate the Area:**  Compute the area:  $A = (1/2)(7 + 17)(12) = 144$.
+
+**Answer:** $\boxed{144}$
+Example 3: **Approach:** Geometric Solution
+
+**Problem:** Find the area of an isosceles trapezoid with side lengths 4 cm, 10 cm, 16 cm, and 10 cm.
+
+**Step 1 — Identify Bases and Legs:** Determine that the legs are 10 cm each and the bases are 4 cm and 16 cm because the trapezoid is isosceles.
+
+**Step 2 — Calculate Projection Length:** Compute the projection of the legs onto the longer base:  $x = \frac{16 - 4}{2} = 6$ cm.
+
+**Step 3 — Apply Pythagorean Theorem:** Use the Pythagorean theorem to find the height, $h$: $h^2 + 6^2 = 10^2$, so $h = \sqrt{100 - 36} = 8$ cm.
+
+**Step 4 — Apply Area Formula:** Calculate the area using the trapezoid formula: Area $= \frac{1}{2} (b_1 + b_2) h$.
+
+**Step 5 — Substitute and Calculate:** Substitute the values: Area $= \frac{1}{2} (4 + 16) \times 8$.
+
+**Step 6 — Simplify:** Simplify the expression: Area $= \frac{1}{2} (20) \times 8 = 10 \times 8$.
+
+**Step 7 — Compute Area:** Calculate the final area: Area = 80 sq cm.
+
+**Answer:** $\boxed{80}$
+
+
+main problem:
+An isosceles trapezoid has an inscribed circle tangent to each of its four sides. The radius of the circle is $3$, and the area of the trapezoid is $72$. Let the parallel sides of the trapezoid have lengths $r$ and $s$, with $r \neq s$. Find $r^2+s^2$
+Present the answer in LaTeX format: \boxed{Your answer}

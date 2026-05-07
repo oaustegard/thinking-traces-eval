@@ -1,0 +1,87 @@
+Considering the following examples as hints, try to answer the question.
+
+Use any useful hints and strategies from the retrieved examples.
+
+Example 1: **Approach:** Medial Triangle and Area Ratios
+
+**Problem:** Given a triangle $ABC$ with area 64, $D, E, F$ are midpoints of $BC, CA, AB$ respectively, and $G$ is the intersection of $DF$ and $BE$. Find the area of quadrilateral $AFGE$.
+
+**Step 1 — Recognize Medial Triangle Properties:**
+Since $D, E, F$ are midpoints, $\vartriangle DEF$ is the medial triangle of $\vartriangle ABC$. The area of $\vartriangle DEF$ is $\frac{1}{4}$ of the area of $\vartriangle ABC$, and is 16.
+
+**Step 2 — Identify Congruent Triangles:**
+The medial triangle divides $\vartriangle ABC$ into four congruent triangles: $\vartriangle AFE, \vartriangle FBD, \vartriangle EDC, \vartriangle DEF$.
+
+**Step 3 — Compute Area of AFE:**
+Area($\vartriangle AFE$) = $\frac{1}{4}$ Area($\vartriangle ABC$) = 16.
+
+**Step 4 — Recognize G as Midpoint of DF:**
+Since $G$ is the intersection of $DF$ and $BE$ and $G$ lies on $BE$, $G$ is the midpoint of $BE$ and $DF$
+
+**Step 5 — Find Area of Triangle FGE:**
+Area($\vartriangle FGE$) = $\frac{1}{2}$ Area($\vartriangle DEF$) = 8.
+
+**Step 6 — Compute Area of Quadrilateral AFGE:**
+Area($AFGE$) = Area($\vartriangle AFE$) + Area($\vartriangle FGE$).
+
+**Step 7 — Sum the Areas:**
+Area($AFGE$) = 16 + 8 = 24.
+
+**Answer:** $\boxed{24}$
+Example 2: **Approach:** Coordinate Geometry with Extended Sides and Area Calculation
+
+**Problem:** Given square $ABCD$ of side length 13, points $E$ on the extension of side $AB$, and $F$ on the extension of side $AD$, such that $\triangle AEF$ has area 169. Given $BX = 6$, where $X$ is the intersection of $EF$ and $BC$, find $DF$.
+
+**Step 1 — Establish Coordinates:**
+Set $A = (0, 0)$, $B = (13, 0)$, $C = (13, 13)$, and $D = (0, 13)$.
+
+**Step 2 — Define Points E and F:**
+Since $E$ lies on the ray $AB$, $E = (e, 0)$ where $e > 0$. Similarly, since $F$ lies on the ray $AD$, $F = (0, f)$ where $f > 0$.
+
+**Step 3 — Express Area of Triangle AEF:**
+Area of $\triangle AEF = \frac{1}{2} \times AE \times AF = \frac{1}{2} ef = 169$.  Thus, $ef = 338$.
+
+**Step 4 — Find Equation of Line EF:**
+Use the two-point form:  The equation of line $EF$ is $\frac{x}{e} + \frac{y}{f} = 1$.
+
+**Step 5 — Use Intersection Point X:**
+Since $X$ lies on $BC$, $X = (13, y_X)$.  $BX = 6$ implies $X=(13, 6)$. Since $X$ is on $EF$, substitute $X$ coordinates into the line equation: $\frac{13}{e} + \frac{6}{f} = 1$.
+
+**Step 6 — Solve for e and f:**
+From the equations $ef = 338$ and $\frac{13}{e} + \frac{6}{f} = 1$, obtain a quadratic equation in e (or f): $3e^2 - 169e + 2197 = 0$, leading to $e = \frac{169 \pm 13\sqrt{13}}{6}$.  Using $f = \frac{338}{e}$, solve to find $f = 13 \pm \sqrt{13}$.
+
+**Step 7 — Calculate DF:**
+Since $D = (0, 13)$ and $F = (0, f)$, then $DF = |13-f|$. With $f = 13 \pm \sqrt{13}$, then $DF = \sqrt{13}$.
+
+**Answer:** $\boxed{\sqrt{13}}$
+Example 3: **Approach:** Coordinate Geometry and Area Formulas
+
+**Problem:** Given a square $ABCD$ with area 200, point $E$ on $BC$, $F$ and $G$ are midpoints of $AE$ and $DE$ respectively. The area of quadrilateral $BEGF$ is 34. Find the area of triangle $GCD$.
+
+**Step 1 — Define Coordinates:**
+Let $A=(0, 10\sqrt{2})$, $B=(0, 0)$, $C=(10\sqrt{2}, 0)$, $D=(10\sqrt{2}, 10\sqrt{2})$, and $E=(e, 0)$.
+
+**Step 2 — Calculate Midpoint Coordinates:**
+Compute $F = (\frac{e}{2}, 5\sqrt{2})$ and $G = (\frac{10\sqrt{2}+e}{2}, 5\sqrt{2})$.
+
+**Step 3 — Express Area of BEGF:**
+Use the area formula for a polygon: Area of $BEGF = \frac{1}{4} | 10\sqrt{2}e + 100 |$.
+
+**Step 4 — Solve for e:**
+Given Area $BEGF = 34$, solve $34 = \frac{5\sqrt{2}}{2}e + 25$ to get $e = \frac{9\sqrt{2}}{5}$.
+
+**Step 5 — Find Coordinates of G, C, and D:**
+$G = (\frac{59\sqrt{2}}{10}, 5\sqrt{2})$, $C = (10\sqrt{2}, 0)$, $D = (10\sqrt{2}, 10\sqrt{2})$.
+
+**Step 6 — Compute Area of GCD:**
+Apply the area formula for a triangle: Area of $GCD = \frac{1}{2} | \frac{59\sqrt{2}}{10}(0 - 10\sqrt{2}) + 10\sqrt{2}(10\sqrt{2} - 5\sqrt{2}) + 10\sqrt{2}(5\sqrt{2} - 0) |$.
+
+**Step 7 — Simplify and Find the Area:**
+Simplify to find Area of $GCD = 41$.
+
+**Answer:** $\boxed{41}$
+
+
+main problem:
+Six points $A, B, C, D, E$ and $F$ lie in a straight line in that order. Suppose that $G$ is a point not on the line and that $AC = 26$, $BD = 22$, $CE = 31$, $DF = 33$, $AF = 73$, $CG = 40$, and $DG = 30$. Find the area of $\triangle BGE$.
+Present the answer in LaTeX format: \boxed{Your answer}

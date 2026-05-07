@@ -1,0 +1,90 @@
+Considering the following examples as hints, try to answer the question.
+
+Use any useful hints and strategies from the retrieved examples.
+
+Example 1: **Approach:** Casework on Prime p, q and Modular Arithmetic
+
+**Problem:** Find all pairs of prime numbers $(p, q)$ such that $3p^{q-1}+1$ divides $11^p+17^p$.
+
+**Step 1 — Define the Divisor:** Let $d = 3p^{q-1}+1$. Since $d$ divides $11^p+17^p$, write it as $d \mid 11^p+17^p$.
+
+**Step 2 — Case 1: Analyze the case when p = 2:** Substitute $p=2$ into $d$ to get $d = 3 \cdot 2^{q-1} + 1$. Also, calculate $11^2+17^2 = 410$. Now,  $d \mid 410$, meaning $3 \cdot 2^{q-1} + 1$ must be a divisor of 410.
+
+**Step 3 — Find Possible Values:** Find the divisors of $410$.
+$410 = 2 \cdot 5 \cdot 41$.  The divisors are $\{1, 2, 5, 10, 41, 82, 205, 410\}$.
+
+**Step 4 — Examine the constraints for p = 2:** Find the values that satisfy $3 \cdot 2^{q-1} + 1 \in \{1, 2, 5, 10, 41, 82, 205, 410\}$.
+Subtract 1 and divide by 3: $2^{q-1} \in \{0, 1/3, 4/3, 3, 40/3, 27, 204/3, 409/3\}$.  Then solve for $2^{q-1}$.
+
+**Step 5 — Find possible values of q:** Given $2^{q-1} \in \{3, 27\}$, derive that $2^{q-1} = 2^1 * 1.5, 2^{q-1}=2^4 * 1.68$, which doesn't lead to an integer solution. Thus, no solutions with $p=2$.
+
+**Step 6 — Case 2: Analyze the case when p is odd.** If $p$ is odd, then $11^p + 17^p = (11+17)(11^{p-1} - \dots + 17^{p-1}) = 28 \cdot (\dots)$, meaning $28$ is a factor.
+
+**Step 7 — Find a potential solution by inspection:** If $p=3$ and $q=3$, then $d=3 \cdot 3^{3-1}+1 = 28$. $11^3+17^3=6244$. Since $28 \mid 6244$, then $(3,3)$ works.
+
+**Answer:** $\boxed{(3, 3)}$
+Example 2: **Approach:** Modulo Arithmetic with $y$
+
+**Problem:** Find the number of non-negative integer solutions to $11x + 13y = 1000$.
+
+**Step 1 — Express the Equation Modulo 11:**
+Take the given equation $11x + 13y = 1000$ modulo 11, resulting in $13y \equiv 1000 \pmod{11}$.
+
+**Step 2 — Simplify the Congruence:**
+Reduce the congruence from Step 1.  Since $13 \equiv 2 \pmod{11}$ and $1000 \equiv 10 \pmod{11}$, simplify to $2y \equiv 10 \pmod{11}$.
+
+**Step 3 — Solve for y:**
+Multiply both sides of the congruence by the modular inverse of 2 mod 11, which is 6.  This gives $y \equiv 5 \pmod{11}$.
+
+**Step 4 — Express y in terms of an Integer Parameter:**
+Write $y$ in the form $y = 11k + 5$, where $k$ is an integer.
+
+**Step 5 — Substitute and Simplify for x:**
+Substitute the expression for $y$ into the original equation: $11x + 13(11k+5) = 1000$.  Solve for $x$, resulting in $x = 85 - 13k$.
+
+**Step 6 — Apply Non-Negativity Constraints:**
+Since $x \ge 0$ and $y \ge 0$, set up inequalities based on the expressions for $x$ and $y$: $85 - 13k \ge 0$ and $11k + 5 \ge 0$.
+
+**Step 7 — Solve for k and Count the Solutions:**
+Solve the inequalities from Step 6 to find the possible integer values of $k$.  $0 \le k \le 6$, so count the number of integer values of $k$ to get the number of solutions.
+
+**Answer:** $\boxed{7}$
+Example 3: **Approach:** Algebraic Manipulation and Modular Arithmetic
+
+**Problem:** If $n$ is an integer such that $4n+3$ is divisible by $11$, find the form of $n$ and the remainder of $n^4$ upon division by $11$.
+
+**Step 1 — Express the Divisibility Condition as a Congruence:**
+Rewrite $4n+3$ is divisible by $11$ as $4n+3 \equiv 0 \pmod{11}$.
+
+**Step 2 — Isolate the Term with *n*:**
+Subtract 3 from both sides of the congruence to get $4n \equiv -3 \pmod{11}$.
+
+**Step 3 — Simplify the Negative Remainder:**
+Since $-3 \equiv 8 \pmod{11}$, rewrite the congruence as $4n \equiv 8 \pmod{11}$.
+
+**Step 4 — Find the Multiplicative Inverse:**
+Determine the multiplicative inverse of $4$ modulo $11$, which is $3$ since $4 \times 3 \equiv 12 \equiv 1 \pmod{11}$.
+
+**Step 5 — Solve for *n*:**
+Multiply both sides of the congruence $4n \equiv 8 \pmod{11}$ by $3$ (the inverse) to get $12n \equiv 24 \pmod{11}$, which simplifies to $n \equiv 2 \pmod{11}$.
+
+**Step 6 — Determine the Form of *n*:**
+Express $n$ in the form $n = 11k + 2$, where $k$ is an integer.
+
+**Step 7 — Find the Remainder of n^4:**
+Since $n \equiv 2 \pmod{11}$, calculate $n^4 \equiv 2^4 \equiv 16 \pmod{11}$, which simplifies to $n^4 \equiv 5 \pmod{11}$.
+
+**Answer:** $\boxed{n = 11k + 2, n^4 \equiv 5 \pmod{11}}$
+
+
+main problem:
+Let $A_1 A_2 A_3 \ldots A_{11}$ be an $11$-sided non-convex simple polygon with the following properties:
+
+\begin{itemize}
+\item For every integer $2 \le i \le 10$,  the area of $\triangle A_i A_{1} A_{i+1}$  is equal to $1$.
+\item For every integer $2 \le i \le 10$, $\cos(\angle A_i A_{1} A_{i+1}) = \frac{12}{13}$.
+\item The perimeter of the $11$-gon $A_1 A_2 A_3 \dots A_{11}$  is equal to $20$.
+\end{itemize}
+
+Then $A_1 A_2 + A_1 A_{11} = \frac{m \sqrt{n} - p}{q}$ where $m, n, p$, and $q$ are positive integers, $n$ is not divisible by the square of any prime, and no prime divides all of $m, p$, and $q$. Find $m + n + p + q$.
+Present the answer in LaTeX format: \boxed{Your answer}
