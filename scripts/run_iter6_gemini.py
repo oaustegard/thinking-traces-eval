@@ -110,13 +110,14 @@ def one_inference(args):
     t0 = time.time()
     try:
         # temperature ~0.7 to match diversity of Haiku subagent draws
-        # max_output_tokens=16000 — flash-lite uses many tokens for working,
-        # 4000 truncated 77% of outputs mid-derivation in the first sweep.
+        # max_output_tokens: flash-lite needs 16k for working+output; flash uses
+        # the same budget for thinking AND visible output, and at 16k the
+        # visible output gets truncated. 32k is empirically enough for both.
         resp = invoke_gemini(
             prompt=prompt,
             model=model,
             temperature=0.7,
-            max_output_tokens=16000,
+            max_output_tokens=32000,
         )
         if not resp:
             return f"FAIL {condition}/{sample_idx}/{prob_id} (null response)"
