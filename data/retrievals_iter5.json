@@ -1,0 +1,30 @@
+{
+  "ood_steepest": [
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.3246
+    },
+    {
+      "id": "ex_2_20_morse",
+      "relevance": 0.0576
+    },
+    {
+      "id": "ex_7_27_quartic_1pi",
+      "relevance": 0.0186
+    }
+  ],
+  "ood_1loop": [
+    {
+      "id": "ex_3_26_effective_action",
+      "relevance": 0.1724
+    },
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.1008
+    },
+    {
+      "id": "ex_7_27_quartic_1pi",
+      "relevance": 0.0575
+    }
+  ]
+}

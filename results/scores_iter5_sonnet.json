@@ -1,0 +1,83 @@
+{
+  "ood_steepest": {
+    "no_rag": {
+      "sample_0": {"score": 1.0, "notes": "All 4 subchecks perfect: tan²x*=2, f(x*)=½log2-¾log3, |f''|=3, prefactor √(2π/3n). Correct boxed answer."},
+      "sample_1": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_2": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_3": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_4": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_5": {"score": 1.0, "notes": "All 4 subchecks perfect. Shows Gaussian substitution explicitly."},
+      "sample_6": {"score": 1.0, "notes": "All 4 subchecks perfect. Minor: wrote (2^{1/2}·3^{-3/4})^n but equivalently = 2^{n/2}·3^{-3n/4}; correct interpretation confirmed in following lines."},
+      "sample_7": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation with explicit verification list."}
+    },
+    "struct": {
+      "sample_0": {"score": 1.0, "notes": "All 4 subchecks perfect. RAG context correctly noted as different (boundary vs interior). Correct boxed answer."},
+      "sample_1": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_2": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_3": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_4": {"score": 0.8, "notes": "Intermediate algebra error in phase evaluation: wrote log√(2/3) + (1/2)log(1/3) but should be (1/2)log(1/√3)=(1/4)log(1/3); arithmetic -½log3-½log3=-log3 ≠ -¾log3. Final answer stated as correct (½log2-¾log3) but intermediate steps are inconsistent. All other subchecks correct."},
+      "sample_5": {"score": 1.0, "notes": "All 4 subchecks perfect. Explicit Gaussian substitution shown."},
+      "sample_6": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_7": {"score": 1.0, "notes": "All 4 subchecks perfect. Noted initial wrong attempt 2cos³x=sin²x but corrected immediately to standard approach."}
+    },
+    "raw": {
+      "sample_0": {"score": 0.3, "notes": "CRITICAL ERROR: boxed answer (2/(3√3))^n instead of (2/(3√3))^{n/2}. Exponent off by factor of 2. Also e^{f(x*)} incorrectly stated as 2/(3^{3/2}) instead of √2/3^{3/4}. Phase, critical point, and |f''|=3 correct but final assembly wrong."},
+      "sample_1": {"score": 1.0, "notes": "Self-corrected intermediate computation error (initially dropped 3^{3/4} factor, then corrected). Final boxed answer correct: √(2π/3n)·2^{n/2}·3^{-3n/4}."},
+      "sample_2": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_3": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_4": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_5": {"score": 1.0, "notes": "All 4 subchecks perfect. Explicit Gaussian substitution shown."},
+      "sample_6": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."},
+      "sample_7": {"score": 1.0, "notes": "All 4 subchecks perfect. Clean derivation."}
+    }
+  },
+  "ood_1loop": {
+    "no_rag": {
+      "sample_0": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6. Explains why cubic cosh terms don't contribute at 1-loop."},
+      "sample_1": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."},
+      "sample_2": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."},
+      "sample_3": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."},
+      "sample_4": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."},
+      "sample_5": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6. Correct note that |f''|=3 refers to the other problem."},
+      "sample_6": {"score": 0.95, "notes": "Correct final answer. Minor: intermediate S''(x) expansion shows 3gx sinh(x) coefficient (should be 2gx) due to differentiation error, but final S''(0)=1-g is correct (sinh terms vanish at x=0 anyway)."},
+      "sample_7": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."}
+    },
+    "struct": {
+      "sample_0": {"score": 0.3, "notes": "WRONG SIGN: Applied +½log(S''/S''_0) giving +½log(1-g), expands to -g/2-g²/4-g³/6. Boxed answer is -g/2-g²/4-g³/6. Wrong-sign closed form AND wrong-sign expansion. Saddle x_c=0 and S''(0)=1-g correct."},
+      "sample_1": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6. Recognizes cosh produces only even powers."},
+      "sample_2": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."},
+      "sample_3": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."},
+      "sample_4": {"score": 0.95, "notes": "Correct final answer g/2+g²/4+g³/6. Minor: S''(x) intermediate expression shows extra sinh term (coefficient issue), but final evaluation S''(0)=1-g is correct since sinh(0)=0."},
+      "sample_5": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."},
+      "sample_6": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6."},
+      "sample_7": {"score": 0.3, "notes": "WRONG SIGN: Applied +½log(S''/S''_0) giving +½log(1-g), expands to -g/2-g²/4-g³/6. Boxed answer is -g/2-g²/4-g³/6. Initial S'' computation also showed 1-2g before correction to 1-g. Saddle x_c=0 correct, S''(0)=1-g correct, but 1-loop formula has wrong sign."}
+    },
+    "raw": {
+      "sample_0": {"score": 0.3, "notes": "WRONG SIGN: Applied +½log(S''/S''_0), boxed answer -g/2-g²/4-g³/6 (first box) and also provides correct +g/2+g²/4+g³/6 as 'alternative convention' (second box). Primary boxed is wrong. Contradictory presentation. Saddle and S''(0)=1-g correct."},
+      "sample_1": {"score": 0.3, "notes": "WRONG SIGN: Applied S_1=+½log(S''(x_c)) giving +½log(1-g), expands to -g/2-g²/4-g³/6. Boxed answer is -g/2-g²/4-g³/6. Saddle x_c=0 and S''(0)=1-g correct."},
+      "sample_2": {"score": 0.95, "notes": "Correct final answer g/2+g²/4+g³/6. Minor notation error in Step 1: wrote S'(x)=x-gx cosh(x) (missing the -(g/2)x² sinh term), but this doesn't affect S'(0)=0. Computation of S''(x) and S''(0)=1-g fully correct. Formula -½log(1-g) applied correctly."},
+      "sample_3": {"score": 0.3, "notes": "WRONG SIGN: Applied S_1=+½log(S''(x_c)) giving +½log(1-g), expands to -g/2-g²/4-g³/6. Boxed answer is -g/2-g²/4-g³/6. Saddle x_c=0 and S''(0)=1-g correct."},
+      "sample_4": {"score": 0.5, "notes": "INCONSISTENT: Applied +½log(S''/S''_0)=+½log(1-g) (wrong sign for closed form), then Step 4 lines 57-60 computes -g/2-g²/4-g³/6 but immediately contradicts by stating S_1=+g/2+g²/4+g³/6 at line 60. Final boxed shows BOTH +½log(1-g) (wrong) AND +g/2+g²/4+g³/6 (correct series). Correct series is explicitly given, but paired with wrong closed form. Per rubric ~0.5 for inconsistent with correct series also boxed."},
+      "sample_5": {"score": 0.9, "notes": "Initially computed wrong sign (-g/2-g²/4 at lines 53-56) then explicitly SELF-CORRECTED at lines 58-64 with correct computation +g/2+g²/4+g³/6. Final boxed answer at line 81 is correct. Closed form at line 83 correct: S_1=-½log(1-g)."},
+      "sample_6": {"score": 1.0, "notes": "Correct: x_c=0, S''(0)=1-g, -½log(1-g), series g/2+g²/4+g³/6. Clean derivation."},
+      "sample_7": {"score": 0.3, "notes": "WRONG SIGN: Applied S_1=+½log(S''/S''_0)=+½log(1-g). Boxed as +½log(1-g)=-g/2-g²/4-g³/6. Subcheck 4 mentions 'g/2+g²/4+g³/6' (correct coefficients) but this contradicts the stated formula and boxed answer. Primary boxed answer has wrong sign."}
+    }
+  },
+  "summary": {
+    "ood_steepest": {
+      "no_rag_mean": 1.0,
+      "struct_mean": 0.975,
+      "raw_mean": 0.9125
+    },
+    "ood_1loop": {
+      "no_rag_mean": 0.99375,
+      "struct_mean": 0.81875,
+      "raw_mean": 0.56875
+    },
+    "overall": {
+      "no_rag_mean": 0.996875,
+      "struct_mean": 0.896875,
+      "raw_mean": 0.740625
+    }
+  }
+}

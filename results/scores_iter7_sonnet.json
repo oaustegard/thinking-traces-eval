@@ -1,0 +1,102 @@
+{
+  "haiku": {
+    "ex_3_24": {"nshot": {
+      "sample_0": {"score": 0.70, "notes": "Correct -1/2 log(1-2g), expansion g+g^2+4g^3/3 correct; graph count discussion confused but formula implicit"},
+      "sample_1": {"score": 0.70, "notes": "Same as s0: correct closed form and expansion; graph count imprecise"},
+      "sample_2": {"score": 0.30, "notes": "Wrong sign: applies S1=+1/2 log(1-2g), boxed answer -g-g^2-4g^3/3"},
+      "sample_3": {"score": 0.30, "notes": "Wrong sign: 1/2 log(1-2g) gives negative series"},
+      "sample_4": {"score": 0.70, "notes": "Correct -1/2 log(1-2g); expansion correct; graph count 2^{n-1}(n-2)! slightly off from 2^{n-1}(n-1)!"},
+      "sample_5": {"score": 0.60, "notes": "Correct closed form g+g^2+4g^3/3 but claims no 1-valent/3-valent 1-loop graphs exist"},
+      "sample_6": {"score": 0.50, "notes": "Correct closed form but boxed expansion has 2g^2 instead of g^2"},
+      "sample_7": {"score": 0.30, "notes": "Wrong sign: writes log(Z/Z_0)=1/2 log(1-2g)=-g-g^2-4g^3/3"}
+    }},
+    "ex_7_28": {"nshot": {
+      "sample_0": {"score": 0.85, "notes": "G_1=g/(4m^2) correct; G_2^c sunset g^2/(48m^3)e^{-3m|t|} correct"},
+      "sample_1": {"score": 0.50, "notes": "G_1 correct; G_2^c coefficient g^2/(12m^3) wrong (off by factor 4 from g^2/(48m^3))"},
+      "sample_2": {"score": 0.85, "notes": "G_1=g/(4m^2) correct; G_2^c sunset g^2/(48m^3)e^{-3m|t|} correct"},
+      "sample_3": {"score": 0.40, "notes": "G_1 correct; G_2^c has wrong topology: e^{-2m|t|} (2 propagators) instead of e^{-3m|t|} (3 propagators)"},
+      "sample_4": {"score": 0.85, "notes": "G_1=g/(4m^2) correct; G_2^c sunset g^2/(48m^3)e^{-3m|t|} correct"},
+      "sample_5": {"score": 0.40, "notes": "G_1 correct; G_2^c has double-edge g^2/(8m^2)e^{-2m|t|} not sunset"},
+      "sample_6": {"score": 0.50, "notes": "G_1 stated g/(4m^2) correct; G_2^c vague/incomplete, no explicit g^2 form"},
+      "sample_7": {"score": 0.40, "notes": "G_1 correct; G_2^c vague with wrong exponent"}
+    }},
+    "ood_steepest": {"nshot": {
+      "sample_0": {"score": 1.00, "notes": "All correct: tan^2 x*=2, f(x*)=1/2 log2-3/4 log3, |f''|=3, prefactor sqrt(2pi/(3n))"},
+      "sample_1": {"score": 1.00, "notes": "All correct; notes early arithmetic error then self-corrects"},
+      "sample_2": {"score": 1.00, "notes": "All correct with explicit subcheck verification"},
+      "sample_3": {"score": 1.00, "notes": "All correct"},
+      "sample_4": {"score": 1.00, "notes": "All correct"},
+      "sample_5": {"score": 1.00, "notes": "All correct with verification"},
+      "sample_6": {"score": 1.00, "notes": "All correct"},
+      "sample_7": {"score": 1.00, "notes": "All correct; notes f''(x*)=-3n (absorbing n) then uses correct formula"}
+    }},
+    "ood_1loop": {"nshot": {
+      "sample_0": {"score": 1.00, "notes": "Correct -1/2 log(1-g)=g/2+g^2/4+g^3/6"},
+      "sample_1": {"score": 1.00, "notes": "Correct -1/2 log(1-g)=g/2+g^2/4+g^3/6"},
+      "sample_2": {"score": 0.30, "notes": "Boxed answer is wrong sign: -g/2-g^2/4-g^3/6; subchecks claim correct but stated final answer governs"},
+      "sample_3": {"score": 1.00, "notes": "Confusing derivation but boxed final is g/2+g^2/4+g^3/6 correct"},
+      "sample_4": {"score": 1.00, "notes": "Correct -1/2 log(1-g)=g/2+g^2/4+g^3/6"},
+      "sample_5": {"score": 1.00, "notes": "Correct"},
+      "sample_6": {"score": 1.00, "notes": "Correct"},
+      "sample_7": {"score": 0.30, "notes": "Wrong sign: S_1=1/2 log(1-g) used; boxed -g/2-g^2/4-g^3/6"}
+    }}
+  },
+  "gemini_flash": {
+    "ex_3_24": {"nshot": {
+      "sample_0": {"score": 0.65, "notes": "Correct -1/2 log(1-2g); graph count (n-1)! not 2^{n-1}(n-1)! (misses factor 2^{n-1})"},
+      "sample_1": {"score": 0.30, "notes": "Wrong scalar: reads S''(0)=1-g giving -1/2 log(1-g)"},
+      "sample_2": {"score": 0.30, "notes": "Wrong scalar: -1/2 log(1-g) from S(x)=(1-g)x^2/2-gx^3/6 misread"},
+      "sample_3": {"score": 0.30, "notes": "Wrong scalar: -1/2 log(1-g)"},
+      "sample_4": {"score": 0.30, "notes": "Wrong scalar: notes correction in text but S''(0)=1-g wrong"},
+      "sample_5": {"score": 0.65, "notes": "Correct -1/2 log(1-2g); graph count (n-1)! not 2^{n-1}(n-1)!"},
+      "sample_6": {"score": 0.30, "notes": "Wrong scalar: -1/2 log(1-g)"},
+      "sample_7": {"score": 0.65, "notes": "Correct -1/2 log(1-2g); graph count (n-1)! for n>=6, 0 for n=2,4"}
+    }},
+    "ex_7_28": {"nshot": {
+      "sample_0": {"score": 0.20, "notes": "G_1=g/(4m) wrong (missing 1/m factor); G_2^c 2-propagator bubble e^{-2m|t|} not sunset"},
+      "sample_1": {"score": 0.10, "notes": "G_1=3g/(4m) very wrong (factor 3 error + wrong m power); G_2^c complex but wrong"},
+      "sample_2": {"score": 0.10, "notes": "G_1=g/(4m) wrong; incorrectly includes nonzero g^1 correction to G_2^c"},
+      "sample_3": {"score": 0.10, "notes": "G_1=g/(4m) wrong; G_2^c via Dyson equation with partial fractions but incorrect"},
+      "sample_4": {"score": 0.10, "notes": "G_1=g/(2m^3) very wrong; G_2^c via Dyson with Sigma^1 nonzero at g^1"},
+      "sample_5": {"score": 0.10, "notes": "G_1=g/(4m^3) very wrong; G_2^c has g^1 tadpole term incorrectly nonzero"},
+      "sample_6": {"score": 0.10, "notes": "G_1=g/(4m^3) very wrong; G_2^c has nonzero g^1 correction"},
+      "sample_7": {"score": 0.10, "notes": "G_1=g/(4m^3) very wrong; G_2^c two topologies both wrong"}
+    }},
+    "ood_steepest": {"nshot": {
+      "sample_0": {"score": 1.00, "notes": "All correct"},
+      "sample_1": {"score": 1.00, "notes": "All correct"},
+      "sample_2": {"score": 1.00, "notes": "All correct"},
+      "sample_3": {"score": 1.00, "notes": "All correct"},
+      "sample_4": {"score": 1.00, "notes": "All correct"},
+      "sample_5": {"score": 1.00, "notes": "All correct"},
+      "sample_6": {"score": 1.00, "notes": "All correct"},
+      "sample_7": {"score": 1.00, "notes": "All correct"}
+    }},
+    "ood_1loop": {"nshot": {
+      "sample_0": {"score": 1.00, "notes": "Correct -1/2 log(1-g)=g/2+g^2/4+g^3/6"},
+      "sample_1": {"score": 1.00, "notes": "Correct"},
+      "sample_2": {"score": 1.00, "notes": "Correct"},
+      "sample_3": {"score": 1.00, "notes": "Correct"},
+      "sample_4": {"score": 1.00, "notes": "Correct"},
+      "sample_5": {"score": 1.00, "notes": "Correct"},
+      "sample_6": {"score": 0.80, "notes": "hbar pollution: answer is g/(2*hbar)+g^2/(4*hbar^2)+...; -0.2 per rubric"},
+      "sample_7": {"score": 1.00, "notes": "Correct"}
+    }}
+  },
+  "summary": {
+    "haiku": {
+      "ex_3_24_nshot_mean": 0.513,
+      "ex_7_28_nshot_mean": 0.594,
+      "ood_steepest_nshot_mean": 1.000,
+      "ood_1loop_nshot_mean": 0.825,
+      "overall_nshot_mean": 0.733
+    },
+    "gemini_flash": {
+      "ex_3_24_nshot_mean": 0.431,
+      "ex_7_28_nshot_mean": 0.113,
+      "ood_steepest_nshot_mean": 1.000,
+      "ood_1loop_nshot_mean": 0.975,
+      "overall_nshot_mean": 0.630
+    }
+  }
+}

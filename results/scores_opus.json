@@ -1,0 +1,51 @@
+{
+  "judge": "opus_4_7_inline",
+  "iteration": 3,
+  "scoring_method": "Per-problem rubric sub-judgments aggregated to 0-1 continuous score per (problem, condition, sample). Inline grep-based extraction of boxed answers and key reasoning lines.",
+  "scores": {
+    "ex_2_15": {
+      "no_rag": {"sample_0": 1.0, "sample_1": 1.0, "sample_2": 1.0, "sample_3": 1.0},
+      "rag":    {"sample_0": 1.0, "sample_1": 1.0, "sample_2": 1.0, "sample_3": 1.0},
+      "rubric_passed": "+infty leading e^a/sqrt(2pi*a), +1/(8a) sign, i*infty two-stationary-point cosine"
+    },
+    "ex_3_24": {
+      "no_rag": {"sample_0": 0.4, "sample_1": 0.5, "sample_2": 0.9, "sample_3": 0.4},
+      "rag":    {"sample_0": 0.9, "sample_1": 0.6, "sample_2": 0.3, "sample_3": 0.5},
+      "key_finding": "ALL 4 RAG samples explicitly identified the action difference and refused to transpose. Anti-copy guardrail worked. Remaining errors are Taylor-expansion slips (e.g. sample_1 wrote -1/2 log(1-2g) but expanded as 2g+8g^3/3 instead of g+g^2+4g^3/3) and one sign error in sample_2."
+    },
+    "ex_5_17": {
+      "no_rag": {"sample_0": 0.85, "sample_1": 0.6, "sample_2": 0.95, "sample_3": 0.6},
+      "rag":    {"sample_0": 0.5, "sample_1": 0.85, "sample_2": 0.85, "sample_3": 0.6}
+    },
+    "ex_5_19": {
+      "no_rag": {"sample_0": 0.85, "sample_1": 0.7, "sample_2": 0.85, "sample_3": 0.85},
+      "rag":    {"sample_0": 0.7, "sample_1": 0.7, "sample_2": 0.8, "sample_3": 0.7},
+      "key_finding": "All 8 outputs got chi(Gamma) = -1/42 correctly. Variance in scores reflects coverage of (i)/(iii) parts."
+    },
+    "ex_7_28": {
+      "no_rag": {"sample_0": 0.7, "sample_1": 0.4, "sample_2": 0.5, "sample_3": 0.7},
+      "rag":    {"sample_0": 0.7, "sample_1": 0.8, "sample_2": 0.7, "sample_3": 0.7},
+      "key_finding": "RAG win despite no matched trace (ex_7_27 not yet generated). Retrieved examples acted as structured reasoning template rather than direct technique transfer. Half of no-RAG samples got the wrong dimension on G_1 (g/4m^3 vs correct g/4m^2)."
+    },
+    "ex_1_2_i": {
+      "no_rag": {"sample_0": 0.9, "sample_1": 0.9, "sample_2": 0.9, "sample_3": 0.95},
+      "rag":    {"sample_0": 0.9, "sample_1": 0.95, "sample_2": 0.95, "sample_3": 0.95},
+      "key_finding": "Off-domain test. All 8 outputs reach correct conclusion. RAG slightly cleaner formulation (consistent with iter-0). H2 (no poisoning) supported."
+    }
+  },
+  "aggregates": {
+    "no_rag_overall_mean": 0.7667,
+    "rag_overall_mean":    0.7783,
+    "delta":               0.0117,
+    "se_estimate":         0.024,
+    "ci_95":               [-0.038, 0.061],
+    "interpretation": "Roughly tied at 24 datapoints per condition. Not statistically significant. Direction is mildly positive for RAG, in contrast to iter-0's mildly negative direction. Most importantly: NO transposition failures observed, which were the dominant iter-0 failure mode."
+  },
+  "comparison_with_iter0": {
+    "iter0_no_rag": 0.63,
+    "iter0_rag":    0.48,
+    "iter0_delta":  -0.15,
+    "iter3_delta":  0.012,
+    "interpretation": "Methodological fixes (anti-copy guardrail, MMR diversity, fixed Struct) shifted RAG from clear-harm (-0.15) to roughly neutral (+0.01). The contamination-flip story partially vindicated: cleaning up the pipeline removed the harm without restoring the contamination-driven 'lift' from the pilot. Net signal: RAG is roughly neutral at this niche scale and corpus size, neither helping nor hurting."
+  }
+}

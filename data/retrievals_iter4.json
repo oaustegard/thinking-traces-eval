@@ -1,0 +1,86 @@
+{
+  "ex_2_15": [
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.2603
+    },
+    {
+      "id": "ex_9_13_amitsur_levitzki",
+      "relevance": 0.1713
+    },
+    {
+      "id": "ex_2_20_morse",
+      "relevance": 0.0584
+    }
+  ],
+  "ex_3_24": [
+    {
+      "id": "ex_3_25_trees",
+      "relevance": 0.1698
+    },
+    {
+      "id": "ex_3_26_effective_action",
+      "relevance": 0.1593
+    },
+    {
+      "id": "ex_7_27_quartic_1pi",
+      "relevance": 0.0798
+    }
+  ],
+  "ex_1_2_i": [
+    {
+      "id": "ex_7_27_quartic_1pi",
+      "relevance": 0.0616
+    },
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.0552
+    },
+    {
+      "id": "ex_3_26_effective_action",
+      "relevance": 0.0405
+    }
+  ],
+  "ex_5_17": [
+    {
+      "id": "ex_5_18_euler_char",
+      "relevance": 0.5074
+    },
+    {
+      "id": "ex_3_26_effective_action",
+      "relevance": 0.0249
+    },
+    {
+      "id": "ex_7_27_quartic_1pi",
+      "relevance": 0.0174
+    }
+  ],
+  "ex_7_28": [
+    {
+      "id": "ex_7_27_quartic_1pi",
+      "relevance": 0.5222
+    },
+    {
+      "id": "ex_2_20_morse",
+      "relevance": 0.0456
+    },
+    {
+      "id": "ex_3_25_trees",
+      "relevance": 0.0239
+    }
+  ],
+  "ex_5_19": [
+    {
+      "id": "ex_5_18_euler_char",
+      "relevance": 0.4051
+    },
+    {
+      "id": "ex_2_14_wallis",
+      "relevance": 0.1861
+    },
+    {
+      "id": "ex_7_27_quartic_1pi",
+      "relevance": 0.053
+    }
+  ]
+}

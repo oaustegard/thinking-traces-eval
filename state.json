@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "started_at": "2026-05-06",
+  "target": {
+    "n_traces": 30,
+    "n_eval": 30,
+    "samples_per_condition": 4,
+    "conditions": ["no_rag", "rag"]
+  },
+  "iterations": [
+    {
+      "n": 1,
+      "date": "2026-05-06",
+      "summary": "Infrastructure + 1 fresh trace. Resumable state machine in place.",
+      "deliverables": [
+        "PIPELINE.md, state.json",
+        "prompts/struct.md (Fig 4 + anti-leakage instruction)",
+        "prompts/rag_inference.md (Fig 7 + anti-copying guardrail)",
+        "scripts/decontaminate.py, scripts/retrieve.py",
+        "ex_2_20 (Morse normal form) trace"
+      ]
+    },
+    {
+      "n": 2,
+      "date": "2026-05-06",
+      "summary": "Allocation decision (Option A: Etingof-only, 12+6) and 2 more traces.",
+      "deliverables": [
+        "data/allocation.json — 12 trace + 6 eval = 18 problems, manually curated from 24-problem usable pool",
+        "Haiku-tagging attempt (output unreliable, manually re-curated; lessons noted)",
+        "2 fresh traces: ex_5_18 (group Euler char), ex_9_13 (Amitsur–Levitzki)",
+        "3 Structs: ex_2_20, ex_5_18, ex_9_13 (Haiku subagent, anti-leakage prompt)",
+        "Decontamination verified: all 3 iter-0 + all 3 new eval problems pass against current 6 traces"
+      ],
+      "lessons": [
+        "Haiku judgeability tagger hallucinated — claimed 'self_contained: yes' for 'Check this' / 'Do this in detail' problems; pulled technique tags from chapter context not problem text. At N=35 manual curation is faster than another tagger round.",
+        "Pool ceiling: 24 cleanly usable problems (judgeable + self-contained + no answer leak). 12+6 split chosen as conservative allocation; could push to 18+6 by including borderline-context problems with prompt fixups."
+      ]
+    }
+  ],
+  "stages": {
+    "extract":  {"status": "done", "n_candidates": 35},
+    "curate":   {"status": "done", "usable_pool": 24, "see": "data/allocation.json"},
+    "split":    {"status": "done", "n_trace": 12, "n_eval": 6},
+    "traces":   {"status": "in_progress", "done": 6, "target": 12,
+                 "done_ids": ["ex_2_14", "ex_3_25", "ex_3_26", "ex_2_20", "ex_5_18", "ex_9_13"],
+                 "pending_ids": ["ex_4_9", "ex_4_15", "ex_7_27", "ex_13_4", "ex_2_12", "ex_5_19"]},
+    "struct":   {"status": "in_progress", "done": 6, "target": 12,
+                 "done_ids": ["ex_2_14", "ex_3_25", "ex_3_26", "ex_2_20", "ex_5_18", "ex_9_13"]},
+    "decontaminate": {"status": "passing", "checked_eval_ids": ["ex_1_2_i", "ex_2_15", "ex_3_24", "ex_5_17", "ex_7_28", "ex_13_12"], "all_clean": true},
+    "index":    {"status": "pending", "blocker": "wait for trace corpus complete"},
+    "eval":     {"status": "iter0_done", "done": 6, "target": 48,
+                 "note": "iter0 partial: 3 problems x 2 conditions x 1 sample = 6 datapoints. Full eval target: 6 problems x 2 conditions x 4 samples = 48 datapoints."},
+    "judge":    {"status": "iter0_done", "done": 6, "target": 48}
+  },
+  "iter3_summary": {
+    "n_per_cell": 4,
+    "total_inferences": 48,
+    "judges": ["opus_4_7_inline", "sonnet_4_6_subagent"],
+    "opus_delta": 0.012,
+    "sonnet_delta": -0.010,
+    "interpretation": "Both judges put |delta| ~ 0.01, in the noise floor. Reversal from iter-0 (delta = -0.15) attributable to methodological fixes: zero transposition failures observed (vs dominant in iter-0), zero single-template anchoring failures observed. H1 (>=10pp lift) falsified; H2 (no off-domain harm) supported."
+  },
+  "iter5_summary": {
+    "n_per_cell": 8,
+    "conditions": ["no_rag", "struct", "raw"],
+    "problems": ["ood_steepest", "ood_1loop"],
+    "ood_construction": "Constructed OOD problems: novel parameters/setups, technique-matched to existing trace corpus but not in Etingof. Steepest: mixed-power integral with interior critical point. 1-loop: cosh-modulated mass shift.",
+    "total_inferences": 48,
+    "judge": "sonnet_4_6_subagent",
+    "results_mean": {
+      "no_rag": 0.997,
+      "struct": 0.897,
+      "raw":    0.741
+    },
+    "delta": {
+      "struct_vs_no_rag": -0.100,
+      "raw_vs_no_rag":    -0.256
+    },
+    "key_finding": "Even on OOD problems where Haiku doesn't have the answer in pretraining, RAG still hurts. No-RAG essentially perfect (1.00) by deriving from technique knowledge. Struct introduces 2/8 sign errors via the retrieved trace's positive-sign convention; Raw introduces 5/8 sign errors plus exponent errors. The harm mechanism (retrieved-context contaminates sign conventions and quantity definitions) replicates iter-4 on out-of-distribution problems.",
+    "experiment_status": "TRULY CLOSED. Iter-0 -> iter-5 is the complete niche-scale T3 evaluation."
+  }
+}

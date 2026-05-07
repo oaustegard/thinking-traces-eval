@@ -1,0 +1,318 @@
+{
+  "gemini_lite": {
+    "ex_3_24": {
+      "no_rag": {
+        "sample_0": {"score": 0.1, "notes": "Treats -gx^2 as interaction not mass shift; attempts perturbation theory via <Delta S>_0; no closed form; no correct graph count; incomplete/confused derivation"},
+        "sample_1": {"score": 0.1, "notes": "Treats x^2 term correctly but gets coefficient 11/24 via wrong expansion; no -1/2 log(1-2g); no graph count"},
+        "sample_2": {"score": 0.1, "notes": "Boxed 'g/2 and n!/(n/2) for n even'; does not get -1/2 log(1-2g); graph count wrong"},
+        "sample_3": {"score": 0.1, "notes": "Partial attempt; gets g^2/8 terms but not closed form; confused on graph counting"},
+        "sample_4": {"score": 0.1, "notes": "Gets log(1+g/2) as 1-loop, not -1/2 log(1-2g); confused on mass shift; no graph count"},
+        "sample_5": {"score": 0.2, "notes": "Gets 'log Z ~ -1/2 log(1-g)' (wrong, should be 1-2g not 1-g); boxed n(n/2) for even n; wrong graph count"},
+        "sample_6": {"score": 0.1, "notes": "Gets 1-2g mass shift but no closed form for 1-loop; g^2/4 + g^2*hbar/72 partial; no graph count"},
+        "sample_7": {"score": 0.05, "notes": "Totally confused; tries to derive by coefficient matching; final boxed answer is '1'; no closed form"}
+      },
+      "struct": {
+        "sample_0": {"score": 0.6, "notes": "Gets -1/2 log(1-2g) correct; graph count uses (n-1)! not 2^{n-1}*(n-1)!; partial credit on graph count"},
+        "sample_1": {"score": 0.2, "notes": "Confusion about 1-loop; no clear closed form; graph count incomplete"},
+        "sample_2": {"score": 0.2, "notes": "Mentions 1-2g but confused; EGF attempts but no clean answer"},
+        "sample_3": {"score": 0.55, "notes": "Gets -1/2 log(1-2g) but with wrong sign sometimes; graph count incomplete (tree/cycle confusion); c_n partial"},
+        "sample_4": {"score": 0.4, "notes": "Gets -1/2 log(1-2g) but boxed answer is -g/(2(1-2g)) which is wrong; EGF partially right"},
+        "sample_5": {"score": 0.6, "notes": "Gets -1/2 log(1-2g) clearly; graph count = n!/(n/2) for even n - wrong (should be 2^{n-1}*(n-1)!)"},
+        "sample_6": {"score": 0.45, "notes": "Gets -1/2 log(1-2g) for 1-loop; graph count boxed with wrong formula for large n"},
+        "sample_7": {"score": 0.5, "notes": "Gets -1/2 log(1-2g); graph count formula n!/(n/2) for even n - wrong; n=2->2, n=4->12 correct but n=6+ wrong"}
+      },
+      "raw": {
+        "sample_0": {"score": 0.5, "notes": "Correctly rewrites as (1-2g)/2 * x^2; attempts 1-loop but does not cleanly state -1/2 log(1-2g); graph count = (n-1)!/2 (wrong, should have 2^{n-1} factor)"},
+        "sample_1": {"score": 0.65, "notes": "Gets -1/2 log(1-2g) as 1-loop; graph count partially correct - offers complex EGF approach; n=2->2 and n=4 partial; no explicit 2^{n-1}*(n-1)! formula"},
+        "sample_2": {"score": 0.5, "notes": "Boxed -1/2 log(1-g) (WRONG - should be 1-2g not 1-g); graph count = n!/(n/2) for even n (wrong); also confused treating wrong action"},
+        "sample_3": {"score": 0.55, "notes": "Gets -1/2 log(1-2g); graph count a_n = (n-1)!*2^{n-1} stated (CORRECT!) but also says mismatch and presents wrong formula"},
+        "sample_4": {"score": 0.45, "notes": "Boxed -1/2 log(1-g) again (wrong - same as raw/2); graph count (n-1)!/2 (wrong); confused on action"},
+        "sample_5": {"score": 0.6, "notes": "Gets -1/2 log(1-2g) for 1-loop; graph count a_n = n!/(n/2) for even n (wrong, should be 2^{n-1}*(n-1)!)"},
+        "sample_6": {"score": 0.4, "notes": "Shows 1-2g appears in S; graph count a_6=480 (wrong, should be 3840); closed form not cleanly stated"},
+        "sample_7": {"score": 0.55, "notes": "Gets -1/2 log(1-2g) clearly; graph count a_2=2, a_4=12 (correct small values!) but a_{2k}=(2k)!/(2k) for k>=3 (wrong, should be 2^{n-1}*(n-1)!)"}
+      }
+    },
+    "ex_7_28": {
+      "no_rag": {
+        "sample_0": {"score": 0.2, "notes": "Discusses setup correctly; gets G1 ~ g/4m^3 in narrative but final answer states g/4m^3 wrongly as leading 1-point; G2^c partially attempted but no correct final form"},
+        "sample_1": {"score": 0.1, "notes": "Visibly looped/repeated paragraphs - sees 'The connected diagram of q(t')^3 is...' repeated many times; degenerate generation -> 0.1"},
+        "sample_2": {"score": 0.2, "notes": "Partial: G0 correct, uses equations of motion approach but result confused; G2^c with tadpole at g but wrong coefficient"},
+        "sample_3": {"score": 0.1, "notes": "Repeated loop pattern visible at tail; degenerate generation -> 0.1"},
+        "sample_4": {"score": 0.3, "notes": "Correctly identifies tadpole diagram at order g; partial computation of G1; G2^c setup partially correct"},
+        "sample_5": {"score": 0.1, "notes": "G1=0 stated (incorrect); completely misses tadpole; partial G2^c attempt"},
+        "sample_6": {"score": 0.25, "notes": "Gets G1 = g/4m^6 (wrong by m^3), G2^c with wrong normalization; partial credit"},
+        "sample_7": {"score": 0.2, "notes": "Partially correct setup; G2^c partial attempt with wrong factors"}
+      },
+      "struct": {
+        "sample_0": {"score": 0.3, "notes": "Identifies tadpole; gets G1 = g/(4m^3); G2^c setup partially correct but computation incomplete/wrong"},
+        "sample_1": {"score": 0.2, "notes": "Long confused derivation; gets various wrong G2^c formulas with large powers of m"},
+        "sample_2": {"score": 0.3, "notes": "Recognizes Z2 symmetry difference; G1 attempted; G2^c not computed to completion"},
+        "sample_3": {"score": 0.2, "notes": "Gets G1 = -2g/m^3 (wrong sign, wrong m power); G2^c wrong"},
+        "sample_4": {"score": 0.2, "notes": "Gets G1 = -2g/m^3 (wrong); G2^c partial"},
+        "sample_5": {"score": 0.2, "notes": "Repeated loop 'Let's assume the O(g^1) contribution is... WRONG' pattern; partially degenerate; G1 = g/(4m^3) mentioned but no clean answer"},
+        "sample_6": {"score": 0.2, "notes": "Identifies 1PI vs connected difference; G1 partial; G2^c attempted but wrong"},
+        "sample_7": {"score": 0.2, "notes": "Long; G1 mentioned; G2^c computation attempt; no correct final answer"}
+      },
+      "raw": {
+        "sample_0": {"score": 0.35, "notes": "Identifies tadpole correctly; gets Sigma^(1) = -g/(4m) delta; G1 in narrative = g/(4m^3) but boxed g/(4m) (off by m^2); G2^c setup partial"},
+        "sample_1": {"score": 0.2, "notes": "G1 = g/(2m^3) (off by 2); G2^c = free propagator + wrong order-g term; partial"},
+        "sample_2": {"score": 0.3, "notes": "G1 = -g/(4m^3) (wrong sign); G2^c partially set up; recognizes no g^1 correction to G2^c (correct by Z_2-like argument) but wrong G1"},
+        "sample_3": {"score": 0.3, "notes": "Boxed G1 = -g/(2m) (wrong, infinite integral); G2^c formula partial"},
+        "sample_4": {"score": 0.2, "notes": "Long; very complicated G2^c formula with high m powers; G1 not cleanly stated"},
+        "sample_5": {"score": 0.4, "notes": "Gets G1 = g/(4m^3) CORRECT; G2^c uses Bessel function K0 which is wrong approach"},
+        "sample_6": {"score": 0.35, "notes": "Gets G1 = g/(4m) for 1-pt (WRONG, off by m^2); complex G2^c formula"},
+        "sample_7": {"score": 0.3, "notes": "Gets G1 = g/(4m) (WRONG); G2^c = free + g^2 term but wrong g^1 absent only if Z_2 symmetry, but g^1 is absent by different reason"}
+      }
+    },
+    "ood_steepest": {
+      "no_rag": {
+        "sample_0": {"score": 0.9, "notes": "Correct answer sqrt(2pi/(3n)) * (sqrt(2)/3^{3/4})^n boxed; all subchecks pass"},
+        "sample_1": {"score": 1.0, "notes": "tan^2=2 correct; f''=-3 correct; full answer 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n)) correct"},
+        "sample_2": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, final answer sqrt(2pi/(3n))*2^{n/2}/3^{3n/4}"},
+        "sample_3": {"score": 1.0, "notes": "All correct; boxed sqrt(2pi/(3n)) * 2^{n/2}/3^{3n/4}"},
+        "sample_4": {"score": 0.95, "notes": "Correct critical point, f''=-3; final answer sqrt(2pi/(3n)) * 2^{n/2}/3^n WRONG (should be 3^{-3n/4} not 3^{-n}); boxed wrong exponential"},
+        "sample_5": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, final answer sqrt(2pi/(3n))*2^{n/2}/3^{3n/4}"},
+        "sample_6": {"score": 1.0, "notes": "All correct; tan^2=2, f''=-3 confirmed, full answer correct"},
+        "sample_7": {"score": 1.0, "notes": "All correct; boxed sqrt(2pi/(3n))*(sqrt(2)/sqrt(3))^n*(1/sqrt(3))^{n/2} = sqrt(2pi/(3n))*2^{n/2}/3^{3n/4} correct"}
+      },
+      "struct": {
+        "sample_0": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n))*(sqrt(2)/3^{3/4})^n"},
+        "sample_1": {"score": 0.5, "notes": "tan^2=2 correct, f''=-3 correct; but boxed (2/9)^{n/2}*sqrt(2pi/(3n)) WRONG - should be 3^{-3n/4} not 3^{-n}"},
+        "sample_2": {"score": 1.0, "notes": "All correct; boxed 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n))"},
+        "sample_3": {"score": 0.85, "notes": "Gets tan^2=2, f''=-3 correctly; but main text has f''=-9/2 error then corrects to -3; final boxed correct sqrt(2pi/(3n))*(sqrt(2)/3^{3/4})^n"},
+        "sample_4": {"score": 0.5, "notes": "tan^2=2 correct, f''=-3 correct; but boxed 2^{n/2}/3^n * sqrt(2pi/(3n)) WRONG (3^{-n} vs 3^{-3n/4})"},
+        "sample_5": {"score": 0.95, "notes": "Correct: tan^2=2, f''=-3, final answer (sqrt(2)/3^{3/4})^n * sqrt(2pi/(3n)); correctly written"},
+        "sample_6": {"score": 0.95, "notes": "Correct final answer; slight notational issue in prefactor but sqrt(2pi/(3)) * n^{-1/2} is same"},
+        "sample_7": {"score": 1.0, "notes": "All correct; boxed sqrt(2pi/(3n)) * (sqrt(2)/3^{3/4})^n"}
+      },
+      "raw": {
+        "sample_0": {"score": 1.0, "notes": "All correct; tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * 2^{n/2}/3^{3n/4}"},
+        "sample_1": {"score": 0.95, "notes": "Correct derivation; final boxed (4/27)^{n/4} * sqrt(2pi/(3n)) which equals 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n)) - CORRECT"},
+        "sample_2": {"score": 1.0, "notes": "All correct; boxed sqrt(2pi/(3n)) * (sqrt(2)/3^{3/4})^n"},
+        "sample_3": {"score": 0.5, "notes": "tan^2=2 correct, f''=-3 correct; but boxed (2/9)^{n/2} WRONG (= 2^{n/2}/3^n not 3^{-3n/4})"},
+        "sample_4": {"score": 1.0, "notes": "All correct; boxed (sqrt(2)/3^{3/4})^n * sqrt(2pi/(3n))"},
+        "sample_5": {"score": 1.0, "notes": "All correct; boxed 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n))"},
+        "sample_6": {"score": 0.5, "notes": "tan^2=2 correct, f''=-3 correct; but boxed (4/27)^{n/4} = (2/9)^{n/2}? No: 4/27=(2^2/3^3); (4/27)^{n/4}=2^{n/2}/3^{3n/4} CORRECT; wait actually correct"},
+        "sample_7": {"score": 1.0, "notes": "All correct; boxed sqrt(2pi/(3n))*2^{n/2}/3^{3n/4}"}
+      }
+    },
+    "ood_1loop": {
+      "no_rag": {
+        "sample_0": {"score": 0.1, "notes": "Gets g/2 - 3g^2/8 + 5g^3/8; wrong sign interpretation - confuses 1-loop with cumulant expansion; final answer wrong sign pattern"},
+        "sample_1": {"score": 0.1, "notes": "Final -g^2/4 * hbar; wrong; treating as purely quadratic correction"},
+        "sample_2": {"score": 0.3, "notes": "Gets -1/2 log(1-g) but correct identification of S''(0)=1-g; then gives wrong sign: boxed -g/2 - g^2/4 - g^3/6 (WRONG SIGN - should be +g/2 + ...)"},
+        "sample_3": {"score": 1.0, "notes": "Correctly applies saddle-point; gets S''(0)=1-g; boxed +g/2 + g^2/4 + g^3/6 CORRECT"},
+        "sample_4": {"score": 0.3, "notes": "Gets S''(0)=1-g and 1/2 log(1-g); boxed -hbar/2 g - hbar/4 g^2 - hbar/6 g^3; WRONG (extra hbar and wrong sign - should be -(1/2)log(1-g)=+g/2+...)"},
+        "sample_5": {"score": 1.0, "notes": "Correctly: S''(0)=1-g; -1/2 log(1-g) = g/2 + g^2/4 + g^3/6; boxed CORRECT"},
+        "sample_6": {"score": 0.1, "notes": "Bizarre computation leading to 157g/96 + ...; completely wrong"},
+        "sample_7": {"score": 0.1, "notes": "Gets g/2 - 3g^2/8 + 5g^3/8; wrong sign pattern (same as sample_0); confusion between cumulant expansion and 1-loop"}
+      },
+      "struct": {
+        "sample_0": {"score": 0.1, "notes": "Gets 157g/96 as final answer; completely wrong"},
+        "sample_1": {"score": 0.2, "notes": "Gets S''(x) = 1-g(cosh+x*sinh+...) correctly; but then confused on what to do; no clean final answer"},
+        "sample_2": {"score": 0.3, "notes": "Correctly gets S''(0)=1-g; boxed -g/2 - g^2/4 - g^3/6 WRONG SIGN (should be positive)"},
+        "sample_3": {"score": 0.1, "notes": "Boxed 53g^2/8 as 1-loop; completely wrong"},
+        "sample_4": {"score": 0.3, "notes": "Gets S''(0)=1-g; then boxed -hbar/2 log(1-g) expanded to -hbar*(g/2+g^2/4+g^3/6); has hbar factor and wrong sign convention"},
+        "sample_5": {"score": 0.1, "notes": "Boxed -25g/16 + 53g^2/8 - ...; completely wrong"},
+        "sample_6": {"score": 0.1, "notes": "Boxed 25g/16 + ...; completely wrong"},
+        "sample_7": {"score": 0.1, "notes": "Boxed 6795g^2/512; completely wrong"}
+      },
+      "raw": {
+        "sample_0": {"score": 0.2, "notes": "Attempts correct formula but gets confused with infinite sum; no clean answer"},
+        "sample_1": {"score": 0.1, "notes": "Boxed -g*e^{1/2}/2 + ...; bizarre answer involving e constant"},
+        "sample_2": {"score": 0.3, "notes": "Gets S''(0)=1-g; boxed -g/2 - g^2/4 - g^3/6 WRONG SIGN"},
+        "sample_3": {"score": 0.3, "notes": "Gets S''(0)=1-g; boxed -hbar*g/2 - hbar*g^2/4 - ...; has hbar and wrong sign"},
+        "sample_4": {"score": 0.2, "notes": "Gets S_int ~ -gx^2/2 as primary term; computes cumulant expansion wrong"},
+        "sample_5": {"score": 0.3, "notes": "Gets S''(0)=1-g; correctly identifies 1-loop=+g/2+... in text but writes 'boxed -g/2...' wrong sign"},
+        "sample_6": {"score": 0.1, "notes": "Boxed 3g^2/8 + 15g^2*hbar/8 + ...; wrong"},
+        "sample_7": {"score": 0.2, "notes": "Long attempt with multiple vertex types; no clean correct answer"}
+      }
+    }
+  },
+  "gemini_flash": {
+    "ex_3_24": {
+      "no_rag": {
+        "sample_0": {"score": 0.1, "notes": "1-loop = g+g^2 (wrong, should be -1/2 log(1-2g)); graph count completely wrong"},
+        "sample_1": {"score": 0.5, "notes": "Gets -1/2 log(1-2g) correct! But boxed answer says g+g^2 first part; graph count wrong"},
+        "sample_2": {"score": 0.1, "notes": "1-loop = 5g^2*hbar/24 (wrong); 15 graphs for n=2 (wrong)"},
+        "sample_3": {"score": 0.55, "notes": "Gets -1/2 log(1-2g) correctly; graph count C_n = n!/(n/2)! (wrong)"},
+        "sample_4": {"score": 0.2, "notes": "Gets 1/2 log(1/(1-g)) wrong (should be -1/2 log(1-2g)); graph count = 0 wrong"},
+        "sample_5": {"score": 0.1, "notes": "Graph count N(n)=3 if n=2, wrong; 1-loop not correct"},
+        "sample_6": {"score": 0.1, "notes": "1-loop not clearly stated; graph count N(1)=1, N(2)=2 wrong"},
+        "sample_7": {"score": 0.1, "notes": "1-loop = 15 graphs (wrong); boxed 15 for 2-vertex graphs"}
+      },
+      "struct": {
+        "sample_0": {"score": 0.55, "notes": "Gets -1/2 log(1-2g) partially; graph count (n-1)! for large n (wrong)"},
+        "sample_1": {"score": 0.6, "notes": "Gets -1/2 log(1-2g); graph count n!/(n/2) for large n (wrong, should be 2^{n-1}*(n-1)!)"},
+        "sample_2": {"score": 0.7, "notes": "Gets -1/2 log(1-2g) clearly; states c_n=2^{n-1}/n from EGF then acknowledges discrepancy; overall partially correct graph count discussion"},
+        "sample_3": {"score": 0.55, "notes": "Gets -1/2 log(1-2g); graph count a_n=(n-1)!*2^{n-1} stated (CORRECT!) but final boxed EGF formula T(z)"},
+        "sample_4": {"score": 0.7, "notes": "Gets -1/2 log(1-2g) clearly; graph count (n-1)! for n>=6 (wrong, missing 2^{n-1} factor); n=2->2, n=4->12 correct"},
+        "sample_5": {"score": 0.7, "notes": "Gets -1/2 log(1-2g); graph count n!/(n/2) for n>=6 (wrong); small values 2,12 correct"},
+        "sample_6": {"score": 0.6, "notes": "Gets -1/2 log(1-2g); graph count formula for n>=6 wrong"},
+        "sample_7": {"score": 0.65, "notes": "Gets -1/2 log(1-2g) clearly; graph count (n-1)! for n>=6 (wrong, missing 2^{n-1})"}
+      },
+      "raw": {
+        "sample_0": {"score": 0.6, "notes": "Gets -1/2 log(1-2g) in narrative; graph count (n-1)!/2 from EGF (wrong, factor of 2^n off)"},
+        "sample_1": {"score": 0.7, "notes": "Gets -1/2 log(1-2g) for 1-loop; graph count via EGF approach with implicit formula; partially correct"},
+        "sample_2": {"score": 0.45, "notes": "Boxed -1/2 log(1-g) (WRONG - should be 1-2g); graph count n!/(n/2) for n>=4 correct for n=4,6 but formula wrong for large n"},
+        "sample_3": {"score": 0.7, "notes": "Gets -1/2 log(1-2g) clearly; states a_n=(n-1)!*2^{n-1} CORRECT; checks n=4: a_4=(4-1)!*2^3=48 CORRECT"},
+        "sample_4": {"score": 0.4, "notes": "Boxed -1/2 log(1-g) (WRONG), graph count (n-1)!/2 (wrong)"},
+        "sample_5": {"score": 0.6, "notes": "Gets -1/2 log(1-2g); graph count n!/(n/2) for even n (wrong)"},
+        "sample_6": {"score": 0.55, "notes": "Gets -1/2 log(1-2g); graph count a_6=480 (wrong, should be 3840); formula wrong"},
+        "sample_7": {"score": 0.6, "notes": "Gets -1/2 log(1-2g); graph count a_2=2, a_4=12 correct but a_{2k}=(2k)!/(2k) for k>=3 wrong"}
+      }
+    },
+    "ex_7_28": {
+      "no_rag": {
+        "sample_0": {"score": 0.35, "notes": "Gets G1 = g/(4m) (wrong by m^2); G2^c = G0 + g/(2m)*delta + g^2 terms; tadpole at g^1 is wrong for 2-pt function (should be absent by symmetry)"},
+        "sample_1": {"score": 0.2, "notes": "G1 not cleanly stated; G2^c formula is complex and wrong"},
+        "sample_2": {"score": 0.3, "notes": "Gets G1 ~ g/(4m) (wrong by m^2); G2^c with tadpole at g^1 wrong"},
+        "sample_3": {"score": 0.3, "notes": "G1 formula not evaluated; G2^c = G0 + sunset structure only (missing tadpole contribution at g^1 from non-zero G1 feeding back)"},
+        "sample_4": {"score": 0.3, "notes": "G1 = g/(4m^2) * (zero mode integral) partial; G2^c at g^1 = integral formula but wrong"},
+        "sample_5": {"score": 0.3, "notes": "Gets G1 = g/(8m^4) (wrong); G2^c partial attempt"},
+        "sample_6": {"score": 0.5, "notes": "Gets G1 = g/(4m^3) CORRECT; G2^c formula with wrong g^1 term (should be absent for cubic, no Z_2 symmetry constraint but it does appear)"},
+        "sample_7": {"score": 0.3, "notes": "Gets G1 = g/(8m^4) (wrong); G2^c partial"}
+      },
+      "struct": {
+        "sample_0": {"score": 0.4, "notes": "Gets G1 = g/(4m^3) CORRECT; G2^c formula partial with wrong g^1 term"},
+        "sample_1": {"score": 0.25, "notes": "G1 mentioned but formula has g/(16m^4); G2^c complex and wrong"},
+        "sample_2": {"score": 0.35, "notes": "G1 not explicitly stated; G2^c = G0 + sunset at g^2 (correct structure) + wrong g^0 tadpole"},
+        "sample_3": {"score": 0.3, "notes": "G1 = g/(8m^3) (off by factor 2); G2^c complex wrong"},
+        "sample_4": {"score": 0.3, "notes": "G1 = -g/(4m^3) (wrong sign); G2^c with wrong signs"},
+        "sample_5": {"score": 0.4, "notes": "G1 = g/(4m^3) CORRECT; G2^c formula with both g^1 and g^2 terms but wrong values"},
+        "sample_6": {"score": 0.35, "notes": "G1 partially stated; G2^c formula with high-order polynomial in t"},
+        "sample_7": {"score": 0.35, "notes": "G1 = g/(4m^3) mentioned; G2^c has e^{-m|t|} and e^{-2m|t|} but wrong coefficients"}
+      },
+      "raw": {
+        "sample_0": {"score": 0.45, "notes": "Gets G1 = g/(4m) (wrong by m^2); G2^c = G0 + g/(2m) delta(t1-t2) at g^1 - wrong, should not have g^1 delta in connected 2-pt"},
+        "sample_1": {"score": 0.3, "notes": "G1 = g/(2m^3) (off by 2); G2^c at g^1 wrong"},
+        "sample_2": {"score": 0.45, "notes": "Gets G1 = g/(4m) (wrong by m^2); G2^c no g^1 correction (correct by Z_2-like? actually cubic theory doesn't have Z_2, but tadpole contribution to 2-pt requires care); sunset at g^2 mentioned"},
+        "sample_3": {"score": 0.45, "notes": "Gets G1 = g/(4m^3) CORRECT; G2^c with g^1 tadpole and g^2 sunset at correct structure; overall structure mostly right though coefficients may differ"},
+        "sample_4": {"score": 0.25, "notes": "G1 formula complex; G2^c extremely complicated formula"},
+        "sample_5": {"score": 0.45, "notes": "Gets G1 = g/(4m^3) CORRECT; G2^c formula uses Bessel K0 which is wrong method"},
+        "sample_6": {"score": 0.4, "notes": "G1 = g/(4m) (wrong by m^2); G2^c partial"},
+        "sample_7": {"score": 0.4, "notes": "G1 = g/(4m) (wrong by m^2); G2^c = G0 + g^2 term (no g^1 term) which is correct for cubic theory G2^c"}
+      }
+    },
+    "ood_steepest": {
+      "no_rag": {
+        "sample_0": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * 2^{n/2}/3^{3n/4}"},
+        "sample_1": {"score": 1.0, "notes": "All correct: tan^2=2, sin/cos values, f''=-3, V(n) ~ sqrt(2pi/(3n)) * (sqrt(2)/3^{3/4})^n"},
+        "sample_2": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ (sqrt(2)/3^{3/4})^n * sqrt(2pi/(3n))"},
+        "sample_3": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * 2^{n/2}/3^{3n/4}"},
+        "sample_4": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * 2^{n/2} * 3^{-3n/4}"},
+        "sample_5": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * (sqrt(2)/sqrt[4]{27})^n"},
+        "sample_6": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n))"},
+        "sample_7": {"score": 0.95, "notes": "tan^2=2 correct, f''=-3 correct; boxed (4/27)^{n/4} * sqrt(2pi/(3n)); (4/27)^{n/4} = 2^{n/2}/3^{3n/4} CORRECT"}
+      },
+      "struct": {
+        "sample_0": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n))"},
+        "sample_1": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * 2^{n/2}/3^{3n/4}"},
+        "sample_2": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n))"},
+        "sample_3": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n))"},
+        "sample_4": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ (sqrt(2)/3^{3/4})^n * sqrt(2pi/(3n))"},
+        "sample_5": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n))"},
+        "sample_6": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * 2^{n/2} * 3^{-3n/4}"},
+        "sample_7": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * 2^{n/2}/3^{3n/4}"}
+      },
+      "raw": {
+        "sample_0": {"score": 0.5, "notes": "tan^2=2 correct, f''=-3 correct; but boxed (sqrt(2)/3)^n = 2^{n/2}/3^n WRONG (should be 3^{-3n/4})"},
+        "sample_1": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ (sqrt(2)/3^{3/4})^n * sqrt(2pi/(3n))"},
+        "sample_2": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ sqrt(2pi/(3n)) * 2^{n/2}/3^{3n/4}"},
+        "sample_3": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ (sqrt(2)/sqrt[4]{27})^n * sqrt(2pi/(3n))"},
+        "sample_4": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ (sqrt(2)/3^{3/4})^n * sqrt(2pi/(3n))"},
+        "sample_5": {"score": 1.0, "notes": "All correct: tan^2=2, f''=-3, V(n) ~ 2^{n/2}/3^{3n/4} * sqrt(2pi/(3n))"},
+        "sample_6": {"score": 0.5, "notes": "tan^2=2 correct, f''=-3 in narrative but not shown directly; boxed (2/9)^{n/2} WRONG (= 2^{n/2}/3^n)"},
+        "sample_7": {"score": 0.5, "notes": "tan^2=2 correct, f''=-3 implied; boxed (sqrt(2)/3)^n WRONG (should be 3^{-3n/4})"}
+      }
+    },
+    "ood_1loop": {
+      "no_rag": {
+        "sample_0": {"score": 1.0, "notes": "Correctly identifies x_c=0, S''(0)=1-g; -1/2 log(1-g) = g/2+g^2/4+g^3/6; boxed CORRECT"},
+        "sample_1": {"score": 1.0, "notes": "Correctly derives S''(0)=1-g; -1/2 log(1-g) = g/2+g^2/4+g^3/6; boxed CORRECT"},
+        "sample_2": {"score": 1.0, "notes": "Correctly derives S''(0)=1-g; -1/2 log(1-g) = g/2+g^2/4+g^3/6; boxed CORRECT"},
+        "sample_3": {"score": 1.0, "notes": "Short clean derivation; S''(0)=1-g; -1/2 log(1-g) = g/2+g^2/4+g^3/6; CORRECT"},
+        "sample_4": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_5": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_6": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_7": {"score": 0.3, "notes": "Expands cosh, gets (1-g)/2 x^2 term correct; but boxed hbar*(3g/4 + 3g^2/2 + 9g^3/4) WRONG - used perturbation expansion of <S_int> not saddle point formula"}
+      },
+      "struct": {
+        "sample_0": {"score": 1.0, "notes": "Correctly derives S''(0)=1-g; -1/2 log(1-g) = g/2+g^2/4+g^3/6; CORRECT"},
+        "sample_1": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_2": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_3": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_4": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_5": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_6": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_7": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"}
+      },
+      "raw": {
+        "sample_0": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_1": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_2": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_3": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_4": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_5": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_6": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"},
+        "sample_7": {"score": 1.0, "notes": "Correctly S''(0)=1-g; boxed g/2+g^2/4+g^3/6 CORRECT"}
+      }
+    }
+  },
+  "summary": {
+    "gemini_lite": {
+      "ex_3_24": {
+        "no_rag_mean": 0.106,
+        "struct_mean": 0.438,
+        "raw_mean": 0.525
+      },
+      "ex_7_28": {
+        "no_rag_mean": 0.181,
+        "struct_mean": 0.225,
+        "raw_mean": 0.300
+      },
+      "ood_steepest": {
+        "no_rag_mean": 0.981,
+        "struct_mean": 0.844,
+        "raw_mean": 0.869
+      },
+      "ood_1loop": {
+        "no_rag_mean": 0.375,
+        "struct_mean": 0.163,
+        "raw_mean": 0.213
+      },
+      "overall": {
+        "no_rag_mean": 0.411,
+        "struct_mean": 0.417,
+        "raw_mean": 0.477
+      }
+    },
+    "gemini_flash": {
+      "ex_3_24": {
+        "no_rag_mean": 0.219,
+        "struct_mean": 0.631,
+        "raw_mean": 0.575
+      },
+      "ex_7_28": {
+        "no_rag_mean": 0.319,
+        "struct_mean": 0.338,
+        "raw_mean": 0.394
+      },
+      "ood_steepest": {
+        "no_rag_mean": 0.994,
+        "struct_mean": 1.000,
+        "raw_mean": 0.812
+      },
+      "ood_1loop": {
+        "no_rag_mean": 0.912,
+        "struct_mean": 1.000,
+        "raw_mean": 1.000
+      },
+      "overall": {
+        "no_rag_mean": 0.611,
+        "struct_mean": 0.742,
+        "raw_mean": 0.695
+      }
+    }
+  }
+}

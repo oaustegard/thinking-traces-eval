@@ -1,0 +1,227 @@
+{
+  "ex_3_24": {
+    "no_rag": {
+      "sample_0": {
+        "score": 0.75,
+        "notes": "Action read correctly. Gets closed form -1/2 log(1-2g) and correct Taylor g+g²+4g³/3. Graph counting interpretation attempted but confused (incorrectly claims cubic contributes at 2-loop to shift g³ coefficient). Cubic contributing 'only at 2-loop and higher' correctly noted implicitly. Loses points for muddled graph-counting section."
+      },
+      "sample_1": {
+        "score": 0.65,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) and g+g²+4g³/3 expansion. Graph counting confused: inconsistently attempts to interpret 1-valent/3-valent vertices. At g^1 says '1 self-loop vertex' which is wrong for the labeled graph question but recognizes the 1-loop structure. Taylor is correct, overall derivation of closed form is sound."
+      },
+      "sample_2": {
+        "score": 0.70,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g), correct Taylor. Graph counting section identifies v1=v3 constraint correctly. But misidentifies that at n=1 there should be 1 graph with v1=v3=1/2 (impossible). Partially correct graph structure reasoning. Solid on the physics side."
+      },
+      "sample_3": {
+        "score": 0.45,
+        "notes": "Action read correctly, identifies mass shift. Gets -1/2 log(1-2g) but then says 'cubic at order g^2 modifies coefficient' and gives incorrect final answer g+g²+2g³/3 (wrong g³ coefficient). The correct 1-loop result from the mass shift alone is -1/2 log(1-2g), which the solution starts with then undermines. Also, the 'more careful calculation' giving 2g³/3 is wrong. Significant error."
+      },
+      "sample_4": {
+        "score": 0.45,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) but Taylor expansion gives g+g²+2g³/3 (incorrect, drops the 4/3 coefficient to 2/3). Claims cubic contributes additional diagrams to change coefficient. Final answer wrong. Graph counting section has wrong graph counts (claims 5 at n=4, 42 at n=6 without justification)."
+      },
+      "sample_5": {
+        "score": 0.70,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) and correct Taylor g+g²+4g³/3. Graph interpretation section is confused (claims 2 graphs at order g^2) but the main derivation is correct. The final boxed answer is correct."
+      },
+      "sample_6": {
+        "score": 0.65,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) and correct Taylor g+g²+4g³/3. Graph counting interpretation incorrectly attributes the g^1 term only to cubic vertices and misidentifies the structure. But the analytic result is correct."
+      },
+      "sample_7": {
+        "score": 0.50,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) initially, then says 'cubic contributes at g^2 and higher' modifying to g+g²+2g³/3 (wrong). Final answer is indecisive/unclear. Graph counting muddled. The initial closed form is right but then undermined."
+      }
+    },
+    "struct": {
+      "sample_0": {
+        "score": 0.30,
+        "notes": "Action read correctly but Taylor expansion is WRONG: gives g + 3/2 g² + 8/3 g³ (this is -1/2 log(1-2g) computed incorrectly — the correct expansion is g+g²+4g³/3, not these coefficients). The closed form -1/2 log(1-2g) is stated but the Taylor expansion contradicts it. Shows RAG retrieved ex_3_26 and warns about transposition, but still makes the error in expansion. Graph counting section confused."
+      },
+      "sample_1": {
+        "score": 0.25,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) but then expands INCORRECTLY to g + 2g² + 8g³/3 (says these are the coefficients). The correct expansion gives g+g²+4g³/3, not g+2g²+8g³/3. This is the error of confusing -1/2 sum(2^k/k) g^k: correct is 2^{k-1}/k, giving 1, 1, 4/3, 2... not 1, 2, 8/3. Graph counts c1=1, c2=2, c3=8/3 stated as fact which is wrong."
+      },
+      "sample_2": {
+        "score": 0.25,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) then expands INCORRECTLY to g+2g²+8g³/3 (same error as sample_1). States coefficients 1, 2, 8/3 for graph counts — all wrong except c1=1. RAG retrieved ex_3_26 and identified the mass shift difference, but still got wrong expansion."
+      },
+      "sample_3": {
+        "score": 0.55,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) and correctly states this equals sum 2^{k-1}/k g^k. Graph interpretation has the v1=v3 constraint correct. Final answer states the expansion explicitly. However, the solution is confused about which saddle point to use (claims x_c = 2(1-2g)/g is dominant which is wrong for perturbation theory). Mixed quality."
+      },
+      "sample_4": {
+        "score": 0.25,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) but expands INCORRECTLY as g+2g²+8g³/3+... (coefficients 2^{k-1}/k computed wrong: should give 1, 1, 4/3 not 1, 2, 8/3). Graph counting states 2^{k-1}/k formula but this is only correct as the coefficient, not the graph count. Loses point for wrong Taylor coefficients."
+      },
+      "sample_5": {
+        "score": 0.45,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) but then says the answer is g+g²+2g³/3 (wrong g³ coefficient — should be 4/3). Graph counting has wrong constraint v3 = v1/2 (wrong: should be v3 = v1). Shows RAG retrieved examples and correctly identified key differences. But key results are incorrect."
+      },
+      "sample_6": {
+        "score": 0.25,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) but expands INCORRECTLY as g+2g²+8g³/3 (wrong coefficients). RAG identified ex_3_26 difference correctly. Graph counting section says c1=1 tadpole, c2=2, c3=8/3 which are wrong (correct is 1, 1, 4/3). Major error in Taylor expansion."
+      },
+      "sample_7": {
+        "score": 0.25,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) but expands INCORRECTLY as g+2g²+8g³/3 (same error). Graph counting states coefficients g1=1, g2=2, g3=8/3 which are wrong. RAG retrieved ex_3_26 and correctly noted the mass-shift difference, but the Taylor expansion is repeatedly wrong across struct samples."
+      }
+    },
+    "raw": {
+      "sample_0": {
+        "score": 0.20,
+        "notes": "Gets the sign WRONG in the final answer: states log(Z/Z_0) = +1/2 log(1-2g) = -g - 2g² - 4g³/3 - ... (negative coefficients). The 1-loop formula should give -1/2 log(1-2g) = g+g²+4g³/3. Action read correctly but sign flip is a fundamental error. Graph counting gives (n-1)! which is also wrong for the labeled 1-loop graphs problem. Major error."
+      },
+      "sample_1": {
+        "score": 0.50,
+        "notes": "Action read correctly. Final boxed answer says -1/2 log(1-2g) = g+g²+2g³/3 (wrong g³ coefficient). The body of the text reaches -1/2 log(1-2g) correctly, but then in the final answer box writes the wrong Taylor expansion. Also confuses the derivation mid-calculation. Partial credit for correct closed form, wrong Taylor."
+      },
+      "sample_2": {
+        "score": 0.20,
+        "notes": "Action read correctly. But the final answer is 1/2 log(1-2g) - 1/2 log(1+g) which is a completely wrong combination. This arises from incorrectly adding a 'cubic necklace sum' that gives -1/2 log(1+g). Major conceptual error — the 1-loop contribution is just -1/2 log(1-2g) from the Gaussian determinant. The cubic contributes only at 2-loop. Final expansion is -g/2 - 7g²/4 - ... which is wrong."
+      },
+      "sample_3": {
+        "score": 0.35,
+        "notes": "Action read correctly. Gets 1/2 log(1-2g) (WRONG SIGN) = -g - g² - 4g³/3. Major sign error in the 1-loop formula direction. The solution claims the sign is correct by convention, but the rubric specifies log(Z/Z_0)|_{1-loop} = -1/2 log(1-2g) > 0 for small g. Graph counting section correctly notes v3=v1. Sign error is significant."
+      },
+      "sample_4": {
+        "score": 0.35,
+        "notes": "Action read correctly. Gets S_1(0) = 1/2 log(1-2g) (WRONG SIGN) = -g - g² - 4g³/3. Same sign error as sample_3. The formula should be log(Z/Z_0) = -1/2 log(1-2g). Note: this raw condition consistently makes the sign error (positive vs negative in front of log). Graph structure understanding is partial."
+      },
+      "sample_5": {
+        "score": 0.70,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) = g+g²+4g³/3 correctly. Graph counting section has v3=v1 constraint correct. Shows the correct formula clearly. One of the better raw solutions. Some confusion in graph enumeration but the main calculation is right."
+      },
+      "sample_6": {
+        "score": 0.35,
+        "notes": "Action read correctly. Gets 1/2 log(1-2g) (WRONG SIGN) = -g - g² - 4g³/3. Sign error throughout. Graph interpretation consistent with wrong-sign answer. The closing 'final answer' correctly states -g - g² + O(g³) which at least is self-consistent with wrong sign, but the physics is wrong."
+      },
+      "sample_7": {
+        "score": 0.55,
+        "notes": "Action read correctly. Gets -1/2 log(1-2g) = g+2g²+8g³/3 (WRONG Taylor: should be g+g²+4g³/3). Makes the 2^{k-1}/k error just like struct samples. Graph counting attempt is detailed but confused. Closed form is right; expansion is wrong."
+      }
+    }
+  },
+  "ex_7_28": {
+    "no_rag": {
+      "sample_0": {
+        "score": 0.80,
+        "notes": "Part (i): Correctly identifies G_1^(0)=0 by Z_2 symmetry, tadpole at order g gives g/(4m²). Correct form and correct dimension. Part (ii): Correctly states G_2^c at g^0 = G_0, no g^1 correction by Z_2, notes g^2 correction from sunset/bubble. Doesn't compute g^2 explicitly. Good overall. Slightly over-detailed in some places."
+      },
+      "sample_1": {
+        "score": 0.75,
+        "notes": "Part (i): Gets g/(4m²) correctly for G_1. Z_2 argument clear. Part (ii): G_0 at g^0, no g^1 term by Z_2 (correctly argued). Notes g^2 corrections but doesn't compute. Solid but incomplete on g^2 structure."
+      },
+      "sample_2": {
+        "score": 0.65,
+        "notes": "Part (i): Gets g/(4m²) but acknowledges uncertainty. Z_2 symmetry argument present but confused at start. Part (ii): G_0 at g^0, notes g^1 vanishes by Z_2, mentions sunset at g^2. Doesn't compute g^2 term. Notes 'g^2/(2m)^3 structure' dimensionally wrong guess for g^2 term. Some confusion in Wick expansion."
+      },
+      "sample_3": {
+        "score": 0.70,
+        "notes": "Part (i): Gets g/(4m²) correctly after some confusion. Z_2 argument clear. Part (ii): G_0 at g^0, no g^1 by Z_2, mentions sunset at g^2 but no explicit form. Good structure, main results correct."
+      },
+      "sample_4": {
+        "score": 0.75,
+        "notes": "Part (i): Gets g/(4m²) with clear tadpole reasoning. Z_2 at order g^0 correct. Part (ii): G_0 at g^0, explicitly states 'no g^1 correction' by Z_2 symmetry, notes g^2 corrections. Good overall structure."
+      },
+      "sample_5": {
+        "score": 0.65,
+        "notes": "Part (i): After some confusion gets g/(4m²). Z_2 argument somewhat confused. Part (ii): Correct at g^0, no g^1, mentions g^2. Does not compute the g^2 correction explicitly. Adequate."
+      },
+      "sample_6": {
+        "score": 0.30,
+        "notes": "Part (i): Gets WRONG answer g/(4m³) (wrong dimension — should be g/(4m²)). The computation is: (g/2) * G_0(t,t) * integral G_0(t',t')dt' but incorrectly evaluates integral G_0(t',t')dt' = integral 1/(2m) dt' which diverges, then gets 1/m² instead of 1/m for the propagator integral. Dimension error. Part (ii): G_0 at g^0 correct, no g^1 correct, g^2 mentioned."
+      },
+      "sample_7": {
+        "score": 0.75,
+        "notes": "Part (i): Gets g/(4m²) correctly. Z_2 argument clear. Part (ii): G_0 at g^0, no g^1 by Z_2, notes g^2 from sunset. Adequate overall, doesn't give explicit g^2 form."
+      }
+    },
+    "struct": {
+      "sample_0": {
+        "score": 0.55,
+        "notes": "Part (i): Gets g/(4m²) but through confused calculation involving [G_0]^2 and integral that gives -g/(8m^4) then just asserts the rubric answer. Z_2 argument present but confused. Part (ii): G_0 at g^0, no g^1 by Z_2 argument (from argument that 2-pt needs even vertices). Notes g^2 from bubble/ladder. Doesn't give explicit form. Main result in (i) correct but derivation confused."
+      },
+      "sample_1": {
+        "score": 0.60,
+        "notes": "Part (i): Gets g/(4m²) but notes integral over G_0² is divergent. Relies on rubric hint. Part (ii): G_0 at g^0, no g^1 (vertex counting argument). G_2 computation claims g²/48m^5 e^{-m|t1-t2|} (wrong form — should have e^{-3m|..|} for sunset or similar). Mass renormalization form rather than sunset. Structural understanding present but g^2 form wrong."
+      },
+      "sample_2": {
+        "score": 0.60,
+        "notes": "Part (i): Gets g/(4m²) (goes through multiple wrong calculations then asserts correct answer). Part (ii): G_0 at g^0, no g^1 by Z_2, g^2 correction claimed as g²/16m³ e^{-3m|t1-t2|} — this is the correct functional form (sunset with e^{-3m|..|}). Good on the structure of the sunset. Score boosted for getting the sunset form right."
+      },
+      "sample_3": {
+        "score": 0.55,
+        "notes": "Part (i): Gets g/(4m²) cleanly with correct Wick theorem calculation. Best derivation seen. Part (ii): G_0 at g^0, no g^1 by Z_2 (correctly argued). g^2 from sunset — confused calculation gives g²/36(2m)³ e^{-3m|..|}. Final states G_0 + O(g³) which is incomplete. Misses explicit g^2 correction in final answer. Good on (i), incomplete on (ii)."
+      },
+      "sample_4": {
+        "score": 0.55,
+        "notes": "Part (i): Gets g/(4m²) (with sign confusion in Feynman rules). Z_2 argument clear. Part (ii): G_0 at g^0, no g^1 by Z_2. g^2 from sunset gives 'g²/C m³ e^{-3m|..|} structure' — right form. Notes 'no g1 correction' explicitly. Adequate overall."
+      },
+      "sample_5": {
+        "score": 0.40,
+        "notes": "Part (i): Gets WRONG answer g/(4m³) (wrong dimension). The 1-point should be g/(4m²). Computation: (g/2) * G_0(t,t) * integral G_0(t,t') = (g/2) * (1/2m) * (1/m²) = g/(4m³) — wrong because integral of G_0(t,t') should be 1/m (not 1/m²). Part (ii): G_0 at g^0, no g^1 by Z_2, g^2 from sunset gives g²/384m³ e^{-3m|..|}. Form is right but coefficient uncertain."
+      },
+      "sample_6": {
+        "score": 0.45,
+        "notes": "Part (i): Gets g/(4m²) but after extensive confused calculation. Eventually accepts rubric answer without clean derivation. Part (ii): G_0 at g^0, no g^1 (via diagram counting — one vertex can't close 2-pt), g^2 from double-edge bubble. Doesn't give explicit g^2 form. Confused Z_2 argument. Adequate final results."
+      },
+      "sample_7": {
+        "score": 0.60,
+        "notes": "Part (i): Gets g/(4m²) correctly. Z_2 argument present. Part (ii): G_0 at g^0, no g^1 by Z_2. g^2 from sunset — gives g²/16m³ e^{-3m|t1-t2|} which is the right functional form. Moderate confidence in this result. Good overall."
+      }
+    },
+    "raw": {
+      "sample_0": {
+        "score": 0.10,
+        "notes": "Part (i): COMPLETELY WRONG — argues G_1 = 0 by Z_2 symmetry at ALL orders (misapplies the free-theory Z_2 symmetry to the full theory). The cubic breaks Z_2 and gives G_1 = g/(4m²) at order g. This is the core failure. Part (ii): G_0 at g^0 correct, no g^1 correct. g^2 term gives g²/8m² e^{-2m|..|}. The e^{-2m} form (two propagators in parallel) rather than sunset e^{-3m} form. This indicates a 2-propagator bubble (tree-level type) not the 1-loop sunset. Partially correct on (ii)."
+      },
+      "sample_1": {
+        "score": 0.35,
+        "notes": "Part (i): Gets WRONG answer g/(2m). The tadpole contribution is g/(4m²), not g/(2m). Wrong dimension and wrong coefficient. Part (ii): G_0 at g^0, no g^1 by Z_2, g^2 gives g²/8m² e^{-2m|t1-t2|}. The 2-propagator form (not sunset 3-propagator). Structurally understands no g^1 correction. But (i) is wrong and (ii) g^2 form is debatable (the problem expects sunset/bubble diagram with e^{-3m structure}; this gives e^{-2m which is a different diagram)."
+      },
+      "sample_2": {
+        "score": 0.35,
+        "notes": "Part (i): Gets WRONG answer -g/(2m). Wrong sign and wrong power of m. Part (ii): G_0 at g^0, no g^1, g^2 gives g²/16m² e^{-2m|..|}. Again 2-propagator form. Missing (i) entirely."
+      },
+      "sample_3": {
+        "score": 0.40,
+        "notes": "Part (i): Gets WRONG answer -g/(4m). Wrong sign and wrong power of m (should be g/(4m²) not -g/(4m)). Part (ii): G_0 at g^0, no g^1 by Z_2, g^2 gives g²/8m² e^{-2m|..|}. 2-propagator form. Understands structure correctly except (i) is wrong."
+      },
+      "sample_4": {
+        "score": 0.45,
+        "notes": "Part (i): Gets g/(2m³) — wrong power of m (should be g/(4m²)). The integral is evaluated as G_0(t,t') integrated = 2/m, giving total g/(2m³). Wrong. Part (ii): G_0 at g^0, no g^1 by Z_2. Notes g^2 bubble structure but gives no explicit form. Good structure understanding, wrong (i)."
+      },
+      "sample_5": {
+        "score": 0.70,
+        "notes": "Part (i): Gets g/(4m²) correctly via careful Wick theorem derivation. Z_2 argument clear. Part (ii): G_0 at g^0, no g^1 by Z_2 (gives two arguments: vertex counting and Z_2). g^2 from sunset — gives g²/8m² e^{-2m|..|}. The 2-propagator form rather than 3-propagator sunset, but structure understood. One of the better raw solutions."
+      },
+      "sample_6": {
+        "score": 0.35,
+        "notes": "Part (i): Gets WRONG g/(4m²) magnitude but with WRONG SIGN -g/(4m²). The sign depends on convention but the rubric says positive. Also evaluates the tadpole diagram differently (self-loop at the vertex vs integral over vertex time). Part (ii): G_0 at g^0, no g^1, g^2 gives g²/8m² e^{-2m|..|}. 2-propagator form. Sign error in (i) is a significant deduction."
+      },
+      "sample_7": {
+        "score": 0.55,
+        "notes": "Part (i): Gets g/(4m²) but via confused derivation (many wrong attempts, finally accepts rubric answer). Z_2 argument present. Part (ii): G_0 at g^0, no g^1 by Z_2, g^2 from sunset — gives g²/8m² e^{-2m|t1-t2|}. 2-propagator rather than 3-propagator form. Notes Dyson equation structure. Moderate quality."
+      }
+    }
+  },
+  "summary": {
+    "ex_3_24": {
+      "no_rag_mean": 0.6063,
+      "struct_mean": 0.3188,
+      "raw_mean": 0.3938
+    },
+    "ex_7_28": {
+      "no_rag_mean": 0.6813,
+      "struct_mean": 0.5438,
+      "raw_mean": 0.4063
+    },
+    "overall": {
+      "no_rag_mean": 0.6438,
+      "struct_mean": 0.4313,
+      "raw_mean": 0.4000
+    }
+  }
+}
