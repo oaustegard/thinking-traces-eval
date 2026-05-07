@@ -60,25 +60,23 @@
     "sonnet_delta": -0.010,
     "interpretation": "Both judges put |delta| ~ 0.01, in the noise floor. Reversal from iter-0 (delta = -0.15) attributable to methodological fixes: zero transposition failures observed (vs dominant in iter-0), zero single-template anchoring failures observed. H1 (>=10pp lift) falsified; H2 (no off-domain harm) supported."
   },
-  "iter4_summary": {
+  "iter5_summary": {
     "n_per_cell": 8,
     "conditions": ["no_rag", "struct", "raw"],
-    "problems": ["ex_3_24", "ex_7_28"],
+    "problems": ["ood_steepest", "ood_1loop"],
+    "ood_construction": "Constructed OOD problems: novel parameters/setups, technique-matched to existing trace corpus but not in Etingof. Steepest: mixed-power integral with interior critical point. 1-loop: cosh-modulated mass shift.",
     "total_inferences": 48,
     "judge": "sonnet_4_6_subagent",
     "results_mean": {
-      "no_rag": 0.644,
-      "struct": 0.431,
-      "raw":    0.400
+      "no_rag": 0.997,
+      "struct": 0.897,
+      "raw":    0.741
     },
     "delta": {
-      "struct_vs_no_rag": -0.213,
-      "raw_vs_no_rag":    -0.244,
-      "struct_vs_raw":     0.031
+      "struct_vs_no_rag": -0.100,
+      "raw_vs_no_rag":    -0.256
     },
-    "interpretation": "RAG actively HURTS on the headroom subset, both formats. Struct slightly outperforms Raw (verbose self-correcting traces hurt more). Strongly supports training-overlap hypothesis: Haiku 4.5 has the techniques in-weight from pretraining (Etingof is in training data); RAG context provides hints that corrupt in-weight knowledge rather than supplementing it. H1 (>=10pp lift) decisively falsified at p<0.001 effective.",
-    "key_failure_mode": "Many Struct samples got the closed form -1/2 log(1-2g) right but expanded it wrong as g + 2g^2 + 8g^3/3 (correct: g + g^2 + 4g^3/3). The Struct's symmetry-factor pattern Sigma (gx_c)^k/(2k) confused Haiku into using it when not directly applicable. Many Raw samples got the SIGN wrong on the closed form (5/8 for ex_3_24): the trace's intermediate sign-debugging passage hooked Haiku before the self-correction.",
-    "experiment_status": "CLOSED. Original issue #2 answered: T3 niche-scale RAG does NOT lift Haiku 4.5 on Etingof problems; on headroom subset it harms by 21pp."
-  },
-  "next_iteration": null
+    "key_finding": "Even on OOD problems where Haiku doesn't have the answer in pretraining, RAG still hurts. No-RAG essentially perfect (1.00) by deriving from technique knowledge. Struct introduces 2/8 sign errors via the retrieved trace's positive-sign convention; Raw introduces 5/8 sign errors plus exponent errors. The harm mechanism (retrieved-context contaminates sign conventions and quantity definitions) replicates iter-4 on out-of-distribution problems.",
+    "experiment_status": "TRULY CLOSED. Iter-0 -> iter-5 is the complete niche-scale T3 evaluation."
+  }
 }
