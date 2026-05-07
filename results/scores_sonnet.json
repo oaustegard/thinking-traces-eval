@@ -1,0 +1,116 @@
+{
+  "ex_2_15": {
+    "no_rag": {
+      "sample_0": {"score": 1.0, "notes": "Perfect: e^a/sqrt(2πa), +1/(8a), two-saddle cosine(b-π/4) all correct."},
+      "sample_1": {"score": 1.0, "notes": "Correct on all three sub-checks; intermediate sign on saddle phase is slightly off but final answer correct."},
+      "sample_2": {"score": 1.0, "notes": "Gets cos(b) first in intermediate then corrects to cos(b-π/4). All sub-checks pass."},
+      "sample_3": {"score": 1.0, "notes": "Perfect: all three sub-checks correct, clean derivation."}
+    },
+    "rag": {
+      "sample_0": {"score": 1.0, "notes": "Perfect. Clear treatment of both regimes, +1/(8a) and cosine formula correct."},
+      "sample_1": {"score": 1.0, "notes": "Intermediate algebra slightly awkward but final answers correct on all three sub-checks."},
+      "sample_2": {"score": 1.0, "notes": "Both saddle contributions combined correctly to give sqrt(2/πb)cos(b-π/4). All sub-checks pass."},
+      "sample_3": {"score": 1.0, "notes": "Perfect. Clean derivation of all three sub-checks."}
+    }
+  },
+  "ex_3_24": {
+    "no_rag": {
+      "sample_0": {"score": 0.5, "notes": "Correctly reads action and gets closed form -1/2 log(1-2g), but expansion is wrong: g+2g²+8g³/3 instead of correct g+g²+4g³/3. Graph counting confused (claims n must be even which is wrong). Closed form gets partial credit."},
+      "sample_1": {"score": 0.7, "notes": "Gets -1/2 log(1-2g) and correct expansion g+g²+4g³/3. Recognizes cubic contributes at g² and higher. Graph counting vague/incomplete but shows some understanding. Good on main calculation."},
+      "sample_2": {"score": 0.7, "notes": "Correct closed form -1/2 log(1-2g) = g+g²+4g³/3. Graph counting incomplete and conflates v₁ with v₃ constraint wrongly (claims v₁=v₃ then only gets all-cubic vertices). Calculation correct."},
+      "sample_3": {"score": 0.35, "notes": "Gets closed form -1/2 log(1-2g) correctly identified but expansion is systematically wrong: g+2g²+8g³/3 (doubles the coefficients). This error persists in multiple attempts. Low credit."}
+    },
+    "rag": {
+      "sample_0": {"score": 0.7, "notes": "Correct closed form -1/2 log(1-2g) = g+g²+4g³/3. Graph interpretation via necklaces is partially right but confused on vertex types (all 3-valent vs mixed). Calculation correct."},
+      "sample_1": {"score": 0.35, "notes": "Correctly identifies the formula but computes expansion as g+2g²+8g³/3 (wrong, same doubling error). Final box shows wrong answer. Low credit despite recognizing RAG action difference."},
+      "sample_2": {"score": 0.1, "notes": "Critical error: wrong sign, computes +1/2 log(1-2g) = -g-g²-4g³/3. All coefficients have wrong sign. Only partial credit for correct action reading and S''(0)=1-2g identification."},
+      "sample_3": {"score": 0.7, "notes": "Correct: -1/2 log(1-2g) = g+g²+4g³/3. Notes cubic contributes at g² and higher. Graph counting incomplete but formula correct."}
+    }
+  },
+  "ex_1_2_i": {
+    "no_rag": {
+      "sample_0": {"score": 0.8, "notes": "Good second-variation argument: δ²S = ∫m|η'|² - ∫U''η·η ≥ 0. Uniqueness argument slightly circular (assumes uniqueness of minimizer). EL and concavity used correctly."},
+      "sample_1": {"score": 0.95, "notes": "Excellent. Energy method for uniqueness: multiply η''·η, integrate by parts, get -m∫|η'|²≥0 → η=0. Second variation for minimality. Both arguments complete and clean."},
+      "sample_2": {"score": 0.9, "notes": "Good energy method uniqueness plus clean second variation. MVT for gradient difference used correctly. Slight hand-wave on equality condition."},
+      "sample_3": {"score": 0.95, "notes": "Clean energy-method proof of uniqueness and second-variation proof of minimality. Equality condition correctly analyzed."}
+    },
+    "rag": {
+      "sample_0": {"score": 0.95, "notes": "Excellent. Energy method uniqueness via ∫η·η''dt=-∫|η'|²dt and concavity giving ≥0 → η=0. Second variation minimality clean."},
+      "sample_1": {"score": 0.9, "notes": "Uses integral remainder form for Taylor, giving exact (not approximate) second variation inequality. Correct and rigorous."},
+      "sample_2": {"score": 0.9, "notes": "Correct and clean. Slight issue: claims equality in δ²S only if η'=0 AND -∇²U·η=0, which is correct but the conclusion η≡0 needs η(a)=0 which is present."},
+      "sample_3": {"score": 0.85, "notes": "Correct second variation. Uniqueness shown via both MVT energy argument and second-variation approach. Some redundancy but correct."}
+    }
+  },
+  "ex_5_17": {
+    "no_rag": {
+      "sample_0": {"score": 1.0, "notes": "Perfect: torsion-free action → free group for N≥3; Γ(2)=Γ+(2)×Z/2Z with Γ+(2) free on 2 gens; formula r=1+N³/12·∏(1-1/p²), N=3→3."},
+      "sample_1": {"score": 0.85, "notes": "Part (a) correct. Part (b) confuses index formula with genus formula in the middle but recovers correct r=3 for N=3. Formula is stated. Slight confusion in derivation."},
+      "sample_2": {"score": 1.0, "notes": "Perfect: correct torsion argument, Γ(2) direct product, formula r=1+N³/12·∏(1-1/p²), example N=3→3."},
+      "sample_3": {"score": 1.0, "notes": "Perfect: all parts correct, clear derivation."}
+    },
+    "rag": {
+      "sample_0": {"score": 0.85, "notes": "Initially writes wrong index formula (N³/2 instead of N³), then self-corrects to correct N³ formula and gets r=3 for N=3. Final formula in boxed answer has N³/24 which gives wrong r for other N but correct for N=3. Formula ambiguous."},
+      "sample_1": {"score": 0.6, "notes": "Intermediate formula r=1+N³/24·∏(1-1/p²) is wrong (off by factor 2). Self-corrects for N=3 calculation to get r=3. Final boxed formula 1+N³/24·∏ is wrong. Loses credit for incorrect final formula."},
+      "sample_2": {"score": 1.0, "notes": "Perfect: correct formula, correct example, clean argument."},
+      "sample_3": {"score": 1.0, "notes": "Perfect: all parts correct."}
+    }
+  },
+  "ex_5_19": {
+    "no_rag": {
+      "sample_0": {"score": 1.0, "notes": "All three parts correct: sphere with cone points 2,3,7; χ=-1/42 with Gauss-Bonnet verification; presentation a²=b³=c⁷=abc=1."},
+      "sample_1": {"score": 1.0, "notes": "All three parts correct. Slight arithmetic presentation issue (84-85=−1) but correct answer −1/42."},
+      "sample_2": {"score": 1.0, "notes": "All three parts correct with Gauss-Bonnet cross-check."},
+      "sample_3": {"score": 1.0, "notes": "All three parts correct."}
+    },
+    "rag": {
+      "sample_0": {"score": 1.0, "notes": "All three parts correct. Clear derivation of abc=1 from fundamental domain argument."},
+      "sample_1": {"score": 1.0, "notes": "All three parts correct. Mentions angle sum not 2π but then correctly gives abc=1 via standard triangle group argument."},
+      "sample_2": {"score": 1.0, "notes": "All three parts correct with Gauss-Bonnet verification."},
+      "sample_3": {"score": 1.0, "notes": "All three parts correct."}
+    }
+  },
+  "ex_7_28": {
+    "no_rag": {
+      "sample_0": {"score": 0.9, "notes": "Gets g/(4m²) for 1-pt (correct). Z₂ symmetry for no g¹ correction to 2-pt. g² correction from sunset/bubble diagrams. Clean on structure. Slight confusion in diagram counting at order g¹."},
+      "sample_1": {"score": 0.4, "notes": "1-pt function final answer is g/(4m³) which is wrong (should be g/(4m²)). Gets Z₂ no-g¹ for 2-pt correct. g² diagrams mentioned. Wrong prefactor on G₁ is major error."},
+      "sample_2": {"score": 0.6, "notes": "Computation gives g/(4m³) but then final boxed answer says g/(4m²). Contradictory. Gets correct answer by assertion not derivation. Z₂ for 2-pt no-g¹ correct. Partial credit."},
+      "sample_3": {"score": 0.7, "notes": "Final answer g/(4m²) correct. Computation inconsistent (gives g/(4m³) then asserts g/(4m²)). Z₂ for 2-pt no-g¹ correct. g² diagrams mentioned."}
+    },
+    "rag": {
+      "sample_0": {"score": 0.9, "notes": "Gets g/(4m²) correct via tadpole. Clear Z₂ argument for no g¹ in 2-pt. g² from bubble/sunset. Good overall."},
+      "sample_1": {"score": 0.8, "notes": "Gets g/(4m²) correct. Z₂ argument for 2-pt correct. g² diagrams discussed. Some confusion about diagram counting but main results correct."},
+      "sample_2": {"score": 0.8, "notes": "Gets g/(4m²) correct. Z₂ no-g¹ for 2-pt correct. g² sunset discussed. Clean overall with some intermediate confusion."},
+      "sample_3": {"score": 0.65, "notes": "Final g/(4m²) correct but computation gives g/(4m³); inconsistency. Z₂ no-g¹ for 2-pt correct. g² diagrams mentioned. Contradictory computation reduces score."}
+    }
+  },
+  "summary": {
+    "ex_2_15": {
+      "no_rag_mean": 1.0,
+      "rag_mean": 1.0
+    },
+    "ex_3_24": {
+      "no_rag_mean": 0.5625,
+      "rag_mean": 0.4625
+    },
+    "ex_1_2_i": {
+      "no_rag_mean": 0.9,
+      "rag_mean": 0.9
+    },
+    "ex_5_17": {
+      "no_rag_mean": 0.9625,
+      "rag_mean": 0.8625
+    },
+    "ex_5_19": {
+      "no_rag_mean": 1.0,
+      "rag_mean": 1.0
+    },
+    "ex_7_28": {
+      "no_rag_mean": 0.65,
+      "rag_mean": 0.7875
+    },
+    "overall": {
+      "no_rag_mean": 0.8458,
+      "rag_mean": 0.8354
+    }
+  }
+}
