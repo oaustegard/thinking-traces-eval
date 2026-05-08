@@ -1,0 +1,79 @@
+Procedural hints retrieved from prior reasoning traces:
+
+Procedural hint 1 (cosine sim=0.330 to your subquestion):
+**Approach:** Algebraic Manipulation of Complex Numbers
+
+**Problem:** Find the sum of the real and imaginary parts of $z$, where $z$ is a complex number satisfying $|T| - 1 + 3i = \frac{1}{z}$, and $T = 5$.
+
+**Step 1 — Substitute and Simplify:**
+Substitute $T=5$ into the equation $|T| - 1 + 3i = \frac{1}{z}$ to get $5 - 1 + 3i = \frac{1}{z}$, which simplifies to $4 + 3i = \frac{1}{z}$.
+
+**Step 2 — Isolate z:**
+Take the reciprocal of both sides of the equation $4 + 3i = \frac{1}{z}$ to get $z = \frac{1}{4+3i}$.
+
+**Step 3 — Multiply by the Conjugate:**
+Multiply the numerator and denominator of $\frac{1}{4+3i}$ by the conjugate of the denominator, which is $4-3i$: $z = \frac{1}{4+3i} \cdot \frac{4-3i}{4-3i}$.
+
+**Step 4 — Simplify the Numerator:**
+Multiply the numerator: $1 \cdot (4-3i) = 4-3i$.
+
+**Step 5 — Simplify the Denominator:**
+Multiply the denominator: $(4+3i)(4-3i) = 4^2 - (3i)^2 = 16 - 9i^2 = 16 - 9(-1) = 16+9 = 25$.
+
+**Step 6 — Express z in Standard Form:**
+Write $z$ in the form $a+bi$: $z = \frac{4-3i}{25} = \frac{4}{25} - \frac{3}{25}i$.
+
+**Step 7 — Calculate the Sum:**
+Add the real and imaginary parts: $\frac{4}{25} + \left(-\frac{3}{25}\right) = \frac{1}{25}$.
+
+**Answer:** $\boxed{\frac{1}{25}}$
+
+Procedural hint 2 (cosine sim=0.258 to your subquestion):
+**Approach:** Direct Solution for z and conjugate(z)
+
+**Problem:** Find the complex number $z$ that satisfies the equation $2z - 3i\bar{z} = -7 + 3i$.
+
+**Step 1 — Take the Conjugate:** Take the conjugate of both sides of the equation $2z - 3i\bar{z} = -7+3i$ to get $2\bar{z} + 3iz = -7-3i$.
+
+**Step 2 — Form a System of Equations:**  The original equation is $2z - 3i\bar{z} = -7 + 3i$ and the conjugated equation is $3iz + 2\bar{z} = -7 - 3i$.
+
+**Step 3 — Eliminate $\bar{z}$:** Multiply the first equation by 2 and the second by $-3i$:  $4z - 6i\bar{z} = -14 + 6i$ and $-9z + 6i\bar{z} = 9 - 21i$.
+
+**Step 4 — Add Equations:** Add the two equations from step 3: $(4z - 6i\bar{z}) + (-9z + 6i\bar{z}) = -14 + 6i + 9 - 21i$, which simplifies to $-5z = -5 - 15i$.
+
+**Step 5 — Solve for z:** Divide by -5: $z = \frac{-5 - 15i}{-5} = 1 + 3i$.
+
+**Step 6 — Solve for $\bar{z}$:** Substitute $z=1+3i$ into  $2\bar{z} + 3iz = -7 - 3i$: $2\bar{z} + 3i(1+3i) = -7-3i$ which gives $2\bar{z} = 2-6i$, so $\bar{z}=1-3i$ (confirms result).
+
+**Answer:** $\boxed{1+3i}$
+
+Procedural hint 3 (cosine sim=0.081 to your subquestion):
+**Approach:** Algebraic Solution for Parabola Intersections
+
+**Problem:** Find the intersection points of the parabolas defined by $y = 2x^2 - 10x - 10$ and $y = x^2 - 4x + 6$, and list the points in order of increasing $x$-coordinate, separated by semicolons.
+
+**Step 1 — Set Equations Equal:** Set the expressions for $y$ equal to each other to find the $x$-values of the intersection points: $2x^2 - 10x - 10 = x^2 - 4x + 6$.
+
+**Step 2 — Rearrange into Quadratic Form:** Manipulate the equation to get a quadratic in the form $ax^2 + bx + c = 0$: $x^2 - 6x - 16 = 0$.
+
+**Step 3 — Apply the Quadratic Formula:** Use the quadratic formula, $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$, with $a=1$, $b=-6$, and $c=-16$.
+
+**Step 4 — Calculate x-values:** Compute the two solutions for $x$: $x = \frac{6 \pm \sqrt{100}}{2} = \frac{6 \pm 10}{2}$, which gives $x = 8$ and $x = -2$.
+
+**Step 5 — Substitute x-values to find y-values:** Substitute the $x$-values into the simpler equation, $y = x^2 - 4x + 6$, to find the corresponding $y$-values.
+
+**Step 6 — Calculate y-values:** For $x = 8$, $y = 38$. For $x = -2$, $y = 18$.
+
+**Step 7 — State the Solution in Order:** List the intersection points in order of increasing $x$-coordinate: $(-2, 18); (8, 38)$.
+
+**Answer:** $\boxed{(-2, 18); (8, 38)}$
+
+---
+
+Now solve this AIME problem using the relevant techniques:
+
+Let $k$ be a real number such that the system
+\begin{align*} |25+20i-z|&=5\\ |z-4-k|&=|z-3i-k| \\ \end{align*}
+has exactly one complex solution $z$. The sum of all possible values of $k$ can be written as $\frac{m}{n},$ where $m$ and $n$ are relatively prime positive integers. Find $m+n.$ Here $i=\sqrt{-1}.$
+
+Show your full reasoning. End with the answer in `\boxed{N}` form (integer 0-999).

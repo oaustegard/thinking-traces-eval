@@ -1,0 +1,8 @@
+Read this AIME (American Invitational Mathematics Examination) problem:
+
+The 9 members of a baseball team went to an ice-cream parlor after their game. Each player had a singlescoop cone of chocolate, vanilla, or strawberry ice cream. At least one player chose each flavor, and the number of players who chose chocolate was greater than the number of players who chose vanilla, which was greater than the number of players who chose strawberry. Let $N$ be the number of different assignments of flavors to players that meet these conditions. Find the remainder when $N$ is divided by $1000.$
+
+What is the FIRST procedural subquestion you need to answer to make progress?
+Output ONE concise natural-language query (≤25 words) describing what mathematical technique or sub-computation you need to perform first.
+
+Format: just the query, no quotes, no preamble. Example: "How do I find the divisors of an integer N?"

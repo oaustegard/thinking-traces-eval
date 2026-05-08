@@ -1,0 +1,212 @@
+[
+  {
+    "idx": 0,
+    "subq": "How do I express base-b numbers 17_b and 97_b as algebraic expressions in b?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.09881222160167795,
+        "source_problem": 9
+      },
+      {
+        "rank": 2,
+        "sim": 0.06905181092811906,
+        "source_problem": 0
+      },
+      {
+        "rank": 3,
+        "sim": 0.06757080678430405,
+        "source_problem": 8
+      }
+    ]
+  },
+  {
+    "idx": 1,
+    "subq": "How do I use the area constraint of quadrilateral DEGF to determine the geometric configuration of triangle ABC?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.1723440056483725,
+        "source_problem": 1
+      },
+      {
+        "rank": 2,
+        "sim": 0.1689314781638505,
+        "source_problem": 1
+      },
+      {
+        "rank": 3,
+        "sim": 0.13755204234715118,
+        "source_problem": 1
+      }
+    ]
+  },
+  {
+    "idx": 2,
+    "subq": "How many ways can we partition 9 into three positive integers C > V > S?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.13443675354182386,
+        "source_problem": 3
+      },
+      {
+        "rank": 2,
+        "sim": 0.10076860032774415,
+        "source_problem": 0
+      },
+      {
+        "rank": 3,
+        "sim": 0.07851979903197162,
+        "source_problem": 6
+      }
+    ]
+  },
+  {
+    "idx": 3,
+    "subq": "How do I factor the quadratic form 12x^2 - xy - 6y^2?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.22747037214226648,
+        "source_problem": 8
+      },
+      {
+        "rank": 2,
+        "sim": 0.13670769276069228,
+        "source_problem": 3
+      },
+      {
+        "rank": 3,
+        "sim": 0.11767713794056861,
+        "source_problem": 8
+      }
+    ]
+  },
+  {
+    "idx": 4,
+    "subq": "What are the divisibility conditions for a number to be divisible by 22?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.22324724586731967,
+        "source_problem": 4
+      },
+      {
+        "rank": 2,
+        "sim": 0.17534980605501857,
+        "source_problem": 4
+      },
+      {
+        "rank": 3,
+        "sim": 0.1307805527306288,
+        "source_problem": 4
+      }
+    ]
+  },
+  {
+    "idx": 5,
+    "subq": "What properties must a tangential trapezoid have for an inscribed circle?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.2941757892303054,
+        "source_problem": 5
+      },
+      {
+        "rank": 2,
+        "sim": 0.1876329768981203,
+        "source_problem": 5
+      },
+      {
+        "rank": 3,
+        "sim": 0.1638757673724771,
+        "source_problem": 5
+      }
+    ]
+  },
+  {
+    "idx": 6,
+    "subq": "How many possible pairings of the twelve letters are there, and how are they structured?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.22668001569388846,
+        "source_problem": 6
+      },
+      {
+        "rank": 2,
+        "sim": 0.13316652941508877,
+        "source_problem": 6
+      },
+      {
+        "rank": 3,
+        "sim": 0.12325106683190261,
+        "source_problem": 6
+      }
+    ]
+  },
+  {
+    "idx": 7,
+    "subq": "What is the geometric locus of points satisfying |z-4-k|=|z-3i-k|?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.3296018022672454,
+        "source_problem": 7
+      },
+      {
+        "rank": 2,
+        "sim": 0.2579780834912486,
+        "source_problem": 7
+      },
+      {
+        "rank": 3,
+        "sim": 0.08083982462163168,
+        "source_problem": 8
+      }
+    ]
+  },
+  {
+    "idx": 8,
+    "subq": "How do I rotate a curve in the plane using rotation transformation matrices?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.050122983878967714,
+        "source_problem": 5
+      },
+      {
+        "rank": 2,
+        "sim": 0.0423524351482108,
+        "source_problem": 5
+      },
+      {
+        "rank": 3,
+        "sim": 0.0370320886901391,
+        "source_problem": 6
+      }
+    ]
+  },
+  {
+    "idx": 9,
+    "subq": "How many ways can we fill a 3\u00d79 grid where each row and each 3\u00d73 block contains 1-9?",
+    "top3": [
+      {
+        "rank": 1,
+        "sim": 0.216876522386934,
+        "source_problem": 9
+      },
+      {
+        "rank": 2,
+        "sim": 0.19040189473374336,
+        "source_problem": 9
+      },
+      {
+        "rank": 3,
+        "sim": 0.17590132654734578,
+        "source_problem": 9
+      }
+    ]
+  }
+]

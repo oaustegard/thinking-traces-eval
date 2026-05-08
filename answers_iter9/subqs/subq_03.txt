@@ -1,0 +1,1 @@
+How do I factor the quadratic form 12x^2 - xy - 6y^2?

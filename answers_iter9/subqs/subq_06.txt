@@ -1,0 +1,1 @@
+How many possible pairings of the twelve letters are there, and how are they structured?

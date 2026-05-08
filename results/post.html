@@ -97,6 +97,25 @@
 
 <p>The four-leg story stands; one leg gets a footnote saying &ldquo;the framing claim is internal-comparison only, T³'s real prompt is closer to vanilla.&rdquo;</p>
 
+<hr>
+
+<h2>Postscript II (May 7, 2026, evening): the Meta paper got there first</h2>
+
+<p>I had Meta FAIR's <a href="https://arxiv.org/abs/2604.01348"><em>Procedural Knowledge at Scale Improves Reasoning</em></a> (Wu, Sachan, Yih, Chen, April 2026) in <code>references/</code> from day 1 of this project and never opened it. Reading it tonight: their §5.1 pilot study independently demonstrates the iter-4..6 headline. Their Figure 2 shows that on three reasoning models (DeepSeek-R1-Distill-Llama-8B, OpenThinker3-7B, Qwen3-32B), document-level RAG <strong>modestly helps instruction-tuned variants but degrades the reasoning variants</strong> on AIME 2024, GPQA-D, and LCB. Their Table 1, on AIME 2025: trajectory-level RAG (&asymp; T³'s setup) hurts all three reasoning models by 3 to 18 percentage points. That is exactly my iter-4..6 finding, at much larger scale, on different models, <strong>published a month before this project started</strong>.</p>
+
+<p>So the &ldquo;RAG over thinking traces hurts strong models&rdquo; claim is not a novel observation. It's a niche-scale replication of Meta's pilot. I should have known that going in. The iter-7 framing-vs-content split and the iter-6 capability-tier reversal across same-corpus model swaps are still novel as far as I can tell, but the headline direction was Meta's first.</p>
+
+<p>Meta's <em>fix</em> is Reasoning Memory: decompose 1.2M reasoning traces into 32M (subquestion, subroutine) pairs offline, embed with ReasonIR, and at inference let the model verbalize its current subquestion as the retrieval query &mdash; injecting the retrieved subroutines back into the thinking stream. They report <strong>+18 to +25pp lift</strong> on AIME 2025 with their full pipeline, on the same models where trajectory RAG hurt.</p>
+
+<p>I ran a heavily simplified iter-9 simulation of the protocol on the same 10 AIME 25 problems: same source pool, same TF-IDF retriever from iter-3..7, two-call protocol (Haiku verbalizes subquestion &rarr; retrieve top-3 from a 100-cheatsheet pool &rarr; Haiku solves with hints prepended). Result: <strong>5/10</strong>, vs 6/10 for both iter-8 conditions &mdash; one discordant pair where the procedural retrieval misled Haiku to a wrong order-of-magnitude answer. This is <em>not</em> a refutation of Meta. The simulation strips the things their architecture relies on: a 32M-item datastore (mine had 100), a reasoning-trained retriever (mine was TF-IDF), and mid-thought re-injection across multiple subquestions (mine retrieved once, prepended). What iter-9 <em>does</em> tell me is that the structural change from problem-as-query to subquestion-as-query, in isolation at niche scale with niche tooling, doesn't recover Meta's positive direction. The three components Meta likely needs together are: scale + retriever + injection protocol. Full writeup with caveats: <a href="https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER9_FINDINGS.md"><code>results/ITER9_FINDINGS.md</code></a>.</p>
+
+<p>Three things change in how this body of work should be cited:</p>
+<ol>
+<li>The <strong>negative-result</strong> finding (trajectory-level trace RAG hurts strong reasoning models on in-pretraining domains) belongs to Meta. Mine is a corroboration at niche scale.</li>
+<li>The <strong>mechanism</strong> I documented (sign/convention transmission from <code>ex_3_26</code> to OOD targets) is a more specific instance of Meta's diagnosis (factual content mis-aligned with the model's current procedural subquestion).</li>
+<li>The <strong>fix worth trying next</strong> is procedural-decomposition RAG with a real retriever, not more variants of trajectory RAG. iter-9 above is a notice-of-attempt; replicating Meta's +18pp lift will require their actual pipeline.</li>
+</ol>
+
     </article>
 </body>
 </html>

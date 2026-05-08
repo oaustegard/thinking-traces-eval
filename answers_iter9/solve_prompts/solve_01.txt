@@ -1,0 +1,126 @@
+Procedural hints retrieved from prior reasoning traces:
+
+Procedural hint 1 (cosine sim=0.172 to your subquestion):
+**Approach:** Coordinate Geometry and Area Subtraction
+
+**Problem:** Given a right triangle $ABC$ with $AE=3$, $EB=9$, $AF=10$, and $FC=27$, where $AD$ bisects $\angle CAB$. Find the area of quadrilateral $DCFG$, where $G$ is the intersection of $AD$ and $EF$.
+
+**Step 1 — Calculate Side Lengths:** Compute $AB = AE + EB = 3 + 9 = 12$ and $AC = AF + FC = 10 + 27 = 37$.
+
+**Step 2 — Apply Pythagorean Theorem:** Compute $BC = \sqrt{AC^2 - AB^2} = \sqrt{37^2 - 12^2} = 35$.
+
+**Step 3 — Find Coordinates:** Set $B=(0,0)$, $A=(0,12)$, and $C=(35,0)$.
+
+**Step 4 — Determine $AD$ Equation:** Determine the coordinates of $D$ via the Angle Bisector Theorem to find $BD = \frac{60}{7}$ and $DC = \frac{185}{7}$.  Then determine the equation for line $AD$.  $D$ is $(\frac{60}{7}, 0)$ and $A = (0,12)$, therefore, the equation of the line $AD$ is $y = -\frac{7}{5}x + 12$.
+
+**Step 5 — Determine $EF$ Equation:** Compute the coordinates of $E=(0, 9)$ and $F = (\frac{350}{37}, \frac{324}{37})$ using the known distances from $A$. Determine the equation for the line $EF$: $y = -\frac{9}{350}x + 9$.
+
+**Step 6 — Find Intersection Point $G$:** Solve the equations of lines $AD$ and $EF$ to find the coordinates of $G$:  $G=(\frac{1050}{481}, \frac{4302}{481})$.
+
+**Step 7 — Compute Area and Subtract:**  Find Area($\triangle ADC$) = $\frac{1110}{7}$. Find Area($\triangle AFG$) using the coordinates of $A$, $F$, and $G$. Compute Area($DCFG$) = Area($\triangle ADC$) - Area($\triangle AFG$) $\approx 148$.
+
+**Answer:** $\boxed{148}$
+
+Procedural hint 2 (cosine sim=0.169 to your subquestion):
+**Approach:** Coordinate Geometry and Area Calculation
+
+**Problem:** Find the area of the polygon formed by the overlapping squares $ABCD$ and $EFGD$, each with area 16, where $H$ is the midpoint of $BC$ and $EF$.
+
+**Step 1 — Determine Side Lengths:**
+Calculate the side length of the squares: since Area = $s^2 = 16$, then $s = 4$.
+
+**Step 2 — Define Coordinates:**
+Assign coordinates to the vertices of square $EFGD$: $F = (0,0), G = (4,0), D = (4,4), E = (0,4)$.
+
+**Step 3 — Find Midpoint H Coordinates:**
+Calculate the coordinates of $H$ as the midpoint of $EF$: $H = (\frac{0+0}{2}, \frac{4+0}{2}) = (0, 2)$.
+
+**Step 4 — Determine the Overlap:**
+Recognize that the overlapping area is the triangle $DGH$.
+
+**Step 5 — Calculate Area of Overlap (Triangle DGH):**
+Calculate the area of the triangle $DGH$ using the coordinates of $D=(4,4)$, $G=(4,0)$ and $H=(0,2)$:  Area($DGH$) = 8.
+
+**Step 6 — Apply Area Formula for Overlapping Shapes:**
+Area($ABHFGD$) = Area($ABCD$) + Area($EFGD$) - Area(overlap)
+
+**Step 7 — Calculate the Final Area:**
+Area($ABHFGD$) = 16 + 16 - 8 = 24.
+
+**Answer:** $\boxed{24}$
+
+Procedural hint 3 (cosine sim=0.138 to your subquestion):
+**Approach:** Coordinate Geometry and Area Ratio
+
+**Problem:** Find the length of $AF$ given that $ABC$ is an equilateral triangle with side length 840, $BD \perp BC$, line $\ell \parallel BC$ intersects $AB$ and $AC$ at $E$ and $F$ respectively, $G$ is on $\ell$ such that $F$ is between $E$ and $G$, $\triangle AFG$ is isosceles, and the ratio of the area of $\triangle AFG$ to the area of $\triangle BED$ is $8:9$.
+
+**Step 1 — Establish Coordinate System:**
+Place $B=(0,0)$, $C=(840,0)$, and $A=(420, 420\sqrt{3})$. Set $D=(0, y_D)$ since $BD \perp BC$.
+
+**Step 2 — Determine Equations of Lines:**
+Line $AB$: $y = \sqrt{3}x$. Line $AC$: $y = -\sqrt{3}x + 840\sqrt{3}$. Line $\ell$: $y = y_D$.
+
+**Step 3 — Compute Intersection Points:**
+$E = (\frac{y_D}{\sqrt{3}}, y_D)$. $F = (840 - \frac{y_D}{\sqrt{3}}, y_D)$.
+
+**Step 4 — Express Side Length and Area of $\triangle AEF$:**
+Since $\triangle AEF$ is equilateral, $EF = 840 - \frac{2y_D}{\sqrt{3}}$. Therefore, $AF = 840 - \frac{2 y_D}{\sqrt{3}}$
+
+**Step 5 — Find Area of Triangle BED:**
+Area of $\triangle BED = \frac{1}{2} \cdot BD \cdot BE \cdot \sin{30^\circ} = \frac{1}{2}y_D \cdot \frac{y_D}{\sqrt{3}} = \frac{y_D^2}{2\sqrt{3}}$
+
+**Step 6 — Find Area of Triangle AFG and use Area Ratio:**
+Assume AF=FG: $Area(\triangle AFG) = \frac{1}{2}AF(420\sqrt{3} - y_D)$. Use the area ratio: $\frac{\frac{1}{2}AF(420\sqrt{3}-y_D)}{\frac{y_D^2}{2\sqrt{3}}} = \frac{8}{9}$
+
+**Step 7 — Solve Quadratic Equation for y_D, then AF:**
+Substitute $AF =  840 - \frac{2 y_D}{\sqrt{3}}$ into the area ratio equation. Solve for $y_D$. Select the correct root since  $y_D<420\sqrt{3}$,  then calculate $AF = 840 - \frac{2 y_D}{\sqrt{3}}$.
+
+**Answer:** $\boxed{840 - 168\sqrt{3}}$
+
+---
+
+Now solve this AIME problem using the relevant techniques:
+
+On $\triangle ABC$ points $A, D, E$, and $B$ lie in that order on side $\overline{AB}$ with $AD = 4$, $DE = 16$, $EB = 8$. Points $A, F, G$ and $C$ lie in that order on side $\overline{AC}$ with $AF = 13$, $FG = 52$, and $GC = 26$. Let $M$ be the reflection of $D$ through $F$, and let $N$ be the reflection of $G$ through $E$. Quadrilateral $DEGF$ has area $288$. Find the area of heptagon $AFNBCEM$.
+
+\begin{tikzpicture}[scale=0.07, line join=round, line cap=round, >=stealth]
+
+    \coordinate (A) at (100,100);
+
+    \coordinate (D) at (95,80);
+    \coordinate (F) at (130,80);
+    \coordinate (M) at (165,80);
+
+    \coordinate (N) at (0,50);
+    \coordinate (E) at (87.5,50);
+    \coordinate (G) at (175,50);
+
+    \coordinate (B) at ($(D)!2!(E)$);
+    \coordinate (C) at ($(F)!2!(G)$);
+    
+    \fill[draw=black, fill=gray!20] (N) -- (E) -- (M) -- (F) -- cycle;
+    \fill[draw=black, fill=gray!20] (N) -- (E) -- (C) -- (B) -- cycle;
+    \fill[draw=black, fill=gray!20] (A) -- (F) -- (M) --  cycle;
+    
+    \draw[line width=0.5mm] (A) -- (B) -- (C) -- cycle;
+
+    \draw (D) -- (M);
+    \draw (G) -- (N);
+    
+    \foreach \point in {A,B,C,D,E,F,G,M,N}
+    \filldraw [black] (\point) circle (20pt);
+    
+    \node[above]  at (A) {$A$};
+    \node[below]       at (B) {$B$};
+    \node[below]  at (C) {$C$};
+    \node[left]       at (D) {$D$};
+    \node[above left]       at (E) {$E$};
+    \node[below]        at (F) {$F$};
+    \node[below left]        at (G) {$G$};
+    \node[right]        at (M) {$M$};
+    \node[left]       at (N) {$N$};
+    
+\end{tikzpicture}
+
+
+Show your full reasoning. End with the answer in `\boxed{N}` form (integer 0-999).

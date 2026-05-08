@@ -1,0 +1,8 @@
+Read this AIME (American Invitational Mathematics Examination) problem:
+
+Find the number of ordered pairs $(x,y)$, where both $x$ and $y$ are integers between $-100$ and $100$, inclusive, such that $12x^2-xy-6y^2=0$.
+
+What is the FIRST procedural subquestion you need to answer to make progress?
+Output ONE concise natural-language query (≤25 words) describing what mathematical technique or sub-computation you need to perform first.
+
+Format: just the query, no quotes, no preamble. Example: "How do I find the divisors of an integer N?"

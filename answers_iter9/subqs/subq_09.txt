@@ -1,0 +1,1 @@
+How many ways can we fill a 3×9 grid where each row and each 3×3 block contains 1-9?

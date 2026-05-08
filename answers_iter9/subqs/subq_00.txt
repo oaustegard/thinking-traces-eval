@@ -1,0 +1,1 @@
+How do I express base-b numbers 17_b and 97_b as algebraic expressions in b?

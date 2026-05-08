@@ -1,0 +1,77 @@
+Procedural hints retrieved from prior reasoning traces:
+
+Procedural hint 1 (cosine sim=0.227 to your subquestion):
+**Approach:** Solving Quadratic Equations
+
+**Problem:** Find the number of $y$-intercepts of the parabola $x = -y^2 + 4y - 4$.
+
+**Step 1 — Set x=0:** Set $x = 0$ in the given equation to find the $y$-intercepts: $0 = -y^2 + 4y - 4$.
+
+**Step 2 — Rewrite the equation:** Multiply the equation by $-1$ to get a positive leading coefficient: $y^2 - 4y + 4 = 0$.
+
+**Step 3 — Factor the quadratic:** Factor the quadratic expression: $(y - 2)(y - 2) = 0$, or $(y-2)^2 = 0$.
+
+**Step 4 — Solve for y:** Solve for $y$: $y - 2 = 0$, thus $y = 2$.
+
+**Step 5 — Determine the y-intercept(s):** The graph intersects the $y$-axis when $x=0$, at the point $(0, 2)$.
+
+**Step 6 — Count the y-intercepts:**  Since there is only one distinct value for $y$, there is only one $y$-intercept.
+
+**Answer:** $\boxed{1}$
+
+Procedural hint 2 (cosine sim=0.137 to your subquestion):
+**Approach:** Elimination
+
+**Problem:** Find the ordered pair $(x,y)$ that satisfies the equations $2x - 3y = -5$ and $5x - 2y = 4$.
+
+**Step 1 — Multiply Equation 1 by 2:**
+Multiply the equation $2x - 3y = -5$ by 2 to get $4x - 6y = -10$.
+
+**Step 2 — Multiply Equation 2 by 3:**
+Multiply the equation $5x - 2y = 4$ by 3 to get $15x - 6y = 12$.
+
+**Step 3 — Subtract Equation 3 from Equation 4:**
+Subtract the equation $4x - 6y = -10$ from $15x - 6y = 12$ to eliminate $y$: $(15x - 6y) - (4x - 6y) = 12 - (-10)$.
+
+**Step 4 — Solve for x:**
+Simplify: $11x = 22 \implies x = 2$.
+
+**Step 5 — Substitute x into Equation 1:**
+Substitute $x = 2$ into $2x - 3y = -5$ to get $2(2) - 3y = -5$.
+
+**Step 6 — Solve for y:**
+Simplify and solve for $y$: $4 - 3y = -5 \implies -3y = -9 \implies y = 3$.
+
+**Step 7 — State the Solution:**
+The ordered pair is $(x, y) = (2, 3)$.
+
+**Answer:** $\boxed{(2, 3)}$
+
+Procedural hint 3 (cosine sim=0.118 to your subquestion):
+**Approach:** Algebraic Solution for Parabola Intersections
+
+**Problem:** Find the intersection points of the parabolas defined by $y = 2x^2 - 10x - 10$ and $y = x^2 - 4x + 6$, and list the points in order of increasing $x$-coordinate, separated by semicolons.
+
+**Step 1 — Set Equations Equal:** Set the expressions for $y$ equal to each other to find the $x$-values of the intersection points: $2x^2 - 10x - 10 = x^2 - 4x + 6$.
+
+**Step 2 — Rearrange into Quadratic Form:** Manipulate the equation to get a quadratic in the form $ax^2 + bx + c = 0$: $x^2 - 6x - 16 = 0$.
+
+**Step 3 — Apply the Quadratic Formula:** Use the quadratic formula, $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$, with $a=1$, $b=-6$, and $c=-16$.
+
+**Step 4 — Calculate x-values:** Compute the two solutions for $x$: $x = \frac{6 \pm \sqrt{100}}{2} = \frac{6 \pm 10}{2}$, which gives $x = 8$ and $x = -2$.
+
+**Step 5 — Substitute x-values to find y-values:** Substitute the $x$-values into the simpler equation, $y = x^2 - 4x + 6$, to find the corresponding $y$-values.
+
+**Step 6 — Calculate y-values:** For $x = 8$, $y = 38$. For $x = -2$, $y = 18$.
+
+**Step 7 — State the Solution in Order:** List the intersection points in order of increasing $x$-coordinate: $(-2, 18); (8, 38)$.
+
+**Answer:** $\boxed{(-2, 18); (8, 38)}$
+
+---
+
+Now solve this AIME problem using the relevant techniques:
+
+Find the number of ordered pairs $(x,y)$, where both $x$ and $y$ are integers between $-100$ and $100$, inclusive, such that $12x^2-xy-6y^2=0$.
+
+Show your full reasoning. End with the answer in `\boxed{N}` form (integer 0-999).

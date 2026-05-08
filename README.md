@@ -48,21 +48,30 @@ and [`scripts/bootstrap_cis.py`](scripts/bootstrap_cis.py).
 | 6 | Capability ladder: Gemini 2.5 Flash + Flash Lite, same 4 problems × 3 cond | 192 | **Direction reverses on Flash**: Δ Struct = +0.41 [+0.28, +0.53] on `ex_3_24`. Lite is in noise floor. | [ITER6_FINDINGS.md](results/ITER6_FINDINGS.md) |
 | 7 | Vanilla n-shot ablation: same retrievals, no anti-copy framing | 64 | Framing does ~half the work. Removing it lifts Haiku +19pp and drops Flash −20pp on `ex_3_24` | [ITER7_FINDINGS.md](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER7_FINDINGS.md) |
 | 8 | Replicate T³'s shipped AIME 25 setup vs Haiku 4.5 (post-publication, after reading T³'s code) | 20 | T³'s shipped prompt is mild ("use as hints"), much closer to my "vanilla" than to my "recipe-RAG" — framing claim is overstated against T³ specifically. AIME 25 (n=10): Haiku no_rag = struct = 6/10. Δ = 0.0pp. | [ITER8_FINDINGS.md](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER8_FINDINGS.md) |
+| 9 | Simulated Reasoning Memory ([Wu et al. 2026](https://arxiv.org/abs/2604.01348), Meta FAIR) on Haiku 4.5: subquestion-driven retrieval over the same T³ pool. Iter-4..6 finding turns out to be an independent niche-scale replication of Meta's §5.1 pilot study. | 20 | Haiku no_rag = 6/10, T³-style trajectory RAG = 6/10, Meta-style subquestion RAG (simulated, niche pool, TF-IDF, prepended hints) = 5/10. Smoke can't reproduce Meta's reported +18pp; spells out which components (32M datastore, ReasonIR, mid-thought injection) are likely doing the work. | [ITER9_FINDINGS.md](https://github.com/oaustegard/thinking-traces-eval/blob/main/results/ITER9_FINDINGS.md) |
 
-## Headline (post-iter-8)
+## Headline (post-iter-9)
 
-The story has four interacting legs, none of which is "T³ is wrong":
+The story has four interacting legs, none of which is "T³ is wrong" — and a
+post-iter-8/9 acknowledgment that **Meta FAIR got there first** with the
+core finding ([Wu et al., arXiv:2604.01348](https://arxiv.org/abs/2604.01348),
+April 2026). My iter-4..6 result is a niche-scale replication of their §5.1
+pilot study, not a novel observation.
 
 1. **Capability tier matters more than corpus size.** A 7-trace niche corpus
    produces a +41pp lift on `ex_3_24` for Gemini 2.5 Flash and a −29pp drop
    on the same problem for Haiku 4.5 — same retrievals, same prompts, same
-   judge.
+   judge. Meta's Figure 2 shows the same direction at scale: instruction-tuned
+   models benefit modestly from document RAG; reasoning models gain little
+   or even degrade.
 2. **The mechanism is convention transmission, not retrieval-as-noise.** When
    a retrieved trace embeds a sign / parameter / normalization choice that
    conflicts with the target (e.g., `ex_3_26`'s `+(1/2) log` vs target's
    `−(1/2) log`), strong-tier models copy the convention and produce wrong
    answers; weaker-tier models with technique gaps benefit from the same hint.
-   Same mechanism, opposite outcomes.
+   Same mechanism, opposite outcomes. Meta diagnoses this more generally as
+   "factual knowledge mis-aligned with the model's current procedural
+   subquestion."
 3. **The framing does about half the work — within my pipeline.** My
    "anti-copy" recipe-RAG framing ("use as hints, state relevance and
    differences") is the *source* of about half of the Flash lift on

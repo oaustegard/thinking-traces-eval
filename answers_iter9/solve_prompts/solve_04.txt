@@ -1,0 +1,70 @@
+Procedural hints retrieved from prior reasoning traces:
+
+Procedural hint 1 (cosine sim=0.223 to your subquestion):
+**Approach:** Digit Permutation with Divisibility Rule
+
+**Problem:** Find the remainder when the largest integer multiple of 8 with distinct digits is divided by 1000.
+
+**Step 1 — Identify the Constraint:** Observe that a number is divisible by 8 if and only if the number formed by its last three digits is divisible by 8.
+
+**Step 2 — Maximize the Number:**  To maximize the number, arrange the digits in descending order from left to right as much as possible.
+
+**Step 3 — Consider 10 Distinct Digits:** Start by considering the largest possible number using all 10 distinct digits (0-9): 9876543210.
+
+**Step 4 — Test for Divisibility by 8:**  Check if the number is divisible by 8 by examining the last three digits (210). Since $210 \div 8$ has a remainder of 2, the number is not divisible by 8.
+
+**Step 5 — Permute Last Three Digits:**  Recognize that only the last three digits need adjustment. The remaining digits can stay in descending order.
+
+**Step 6 — Find Permutation for Divisibility:** The remaining digits are 0, 1, 2. The only permutation of these digits that results in a number divisible by 8 is 120. Construct the number 9876543120.
+
+**Step 7 — Calculate the Remainder:** Find the remainder when the number (9876543120) is divided by 1000, which is the last three digits, 120.
+
+**Answer:** $\boxed{120}$
+
+Procedural hint 2 (cosine sim=0.175 to your subquestion):
+**Approach:** Construct and Test
+
+**Problem:** Find the smallest positive multiple of 15 whose digits are only 8 or 0. Then, compute the result of dividing that number by 15.
+
+**Step 1 — Recognize Divisibility Rules:** The number must be divisible by both 3 and 5. This means the last digit must be 0, and the sum of the digits must be divisible by 3.
+
+**Step 2 — Determine Digits Sum Condition:** Since the digits are only 8 or 0, and the sum of digits must be divisible by 3, the number of 8's must be a multiple of 3.
+
+**Step 3 — Test with Three 8's:** Start with the smallest possible multiple of 3 for the number of 8's, which is 3. Construct a number with three 8's and ending in 0. The smallest such number is 8880.
+
+**Step 4 — Verify Divisibility:** Check if 8880 is divisible by 15.  $8880/5 = 1776$. The digit sum is $8 + 8 + 8 + 0 = 24$, which is divisible by 3.
+
+**Step 5 — Confirm the Multiple:** Since 8880 is divisible by both 3 and 5, it is divisible by 15.
+
+**Step 6 — Calculate the Quotient:** Divide 8880 by 15:  $8880 / 15 = 592$.
+
+**Answer:** $\boxed{592}$
+
+Procedural hint 3 (cosine sim=0.131 to your subquestion):
+**Approach:** Digit Sum Divisibility and Maximization
+
+**Problem:** Find the largest positive integer less than 10,000 with only even digits (0, 2, 4, 6, 8) that is divisible by 9.
+
+**Step 1 — Recognize the Divisibility Rule:** Observe that a number is divisible by 9 if and only if the sum of its digits is divisible by 9.
+
+**Step 2 — Determine the Maximum Digit Count:** Since the integer must be less than 10,000, the maximum number of digits is 4.
+
+**Step 3 — Start with the Largest Possible Digit:** Begin searching for the largest possible number by starting with the largest possible digit, 8, in the highest place value.
+
+**Step 4 — Explore 4-Digit Numbers with 8 as the First Digit:** Consider numbers of the form 8bcd, where b, c, and d are even digits.  Then, $8 + b + c + d$ must be a multiple of 9.
+
+**Step 5 — Find the Largest Possible Number for Sum = 18:**  Try to find even digits b, c, and d such that $8 + b + c + d = 18$, meaning $b + c + d = 10$.  Maximize b first, then c. If $b=8$, $c+d=2$. Try $c=2, d=0$. Thus giving 8820, which is divisible by 9.
+
+**Step 6 — Verify the Solution:** Verify 8820 meets all the criteria: it's less than 10,000, has only even digits, and is divisible by 9.
+
+**Step 7 — State the Answer:** Conclude that the largest such integer is 8820.
+
+**Answer:** $\boxed{8820}$
+
+---
+
+Now solve this AIME problem using the relevant techniques:
+
+There are $8!= 40320$ eight-digit positive integers that use each of the digits 1, 2, 3, 4, 5, 6, 7, 8 exactly once. Let N be the number of these integers that are divisible by $22$. Find the difference between $N$ and 2025.
+
+Show your full reasoning. End with the answer in `\boxed{N}` form (integer 0-999).
